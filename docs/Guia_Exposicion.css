@@ -135,3 +135,24 @@ a.defref:hover { color: #FFF; background: #16835D; border-radius: 4px; }
 tr.hit td { background: var(--amber-bg) !important; }
 #def-back { display: none; position: fixed; right: 70px; bottom: 18px; padding: 10px 16px; border: 0; border-radius: 22px; background: #16835D; color: #FFF; font: 700 14px/1 "Segoe UI", Arial, sans-serif; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
 @media print { a.defref, #def-back { display: none; } }
+
+/* Inline SVG figures */
+.fig { margin: 20px 0 26px; }
+.fig-scroll { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
+.fig svg { display: block; width: 100%; min-width: 720px; height: auto; }
+.fig figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
+.fig .box { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
+.fig .box.strong { stroke: var(--navy); stroke-width: 2; }
+.fig .us { fill: var(--sky); stroke: var(--blue); stroke-width: 3; }
+.fig .bank { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 7 6; }
+.fig .ok { fill: var(--green-bg); stroke: #16835D; stroke-width: 2; }
+.fig .no { fill: var(--red-bg); stroke: #C43D3D; stroke-width: 1.5; }
+.fig .arrow { fill: none; stroke: var(--muted); stroke-width: 2; }
+.fig .arrowhead { fill: var(--muted); }
+.fig .t { fill: var(--ink); font: 14px "Segoe UI", Arial, sans-serif; }
+.fig .tb { fill: var(--navy); font: 700 14px "Segoe UI", Arial, sans-serif; }
+.fig .ts { fill: var(--muted); font: 12.5px "Segoe UI", Arial, sans-serif; }
+.fig .accent { fill: var(--blue); font-size: 16px; letter-spacing: .06em; }
+.fig .okt { fill: #16835D; font-weight: 700; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .fig .okt { fill: #4CC38A; } }
+:root[data-theme="dark"] .fig .okt { fill: #4CC38A; }
