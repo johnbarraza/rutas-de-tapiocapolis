@@ -60,6 +60,84 @@
       }
     });
 
+    // Link the first mention of each term or key figure per section to its definition with a [?] marker.
+    const num = (pattern, id) => [new RegExp('(?<![\\d.])(?:≈\\s?)?(?:US\\$)?(?:' + pattern + ')(?:m\\b| million)?(?![\\d])'), id];
+    const refs = [
+      [/\bDSCR\b/, 'def-dscr'], [/\bLLCR\b/, 'def-llcr'], [/\bPLCR\b/, 'def-plcr'], [/\bCFADS\b/, 'def-cfads'],
+      [/\bEBITDA\b/, 'def-ebitda'], [/\bIDC\b/, 'def-idc'], [/\bCAPEX\b/, 'def-capex'], [/\bSPV\b/, 'def-spv'],
+      [/\b[Ll]everage\b/, 'def-leverage'], [/\b[Ee]quity\b/, 'def-equity'],
+      [/\b(?:[Dd]rawdowns?|[Dd]esembolsos?)\b/, 'def-drawdown'], [/\b(?:[Dd]ebt service|[Ss]ervicio de deuda)\b/, 'def-ds'],
+      [/\b[Cc]ovenants?\b/, 'def-covenant'], [/\b(?:[Ss]culpt(?:ed|ing)?|[Ee]sculpid[ao])\b/, 'def-sculpt'],
+      [/\b(?:[Hh]eadroom|[Hh]olgura)\b/, 'def-headroom'], [/\b(?:DSRA|MMRA)\b/, 'def-reservas'], [/\bIRR\b/, 'def-irr'],
+      [/\b(?:[Vv]alor presente|VP)\b/, 'def-vp'], [/\b(?:[Ss]aldo pendiente|outstanding balance)\b/, 'def-saldo'],
+      [/\b[Ff]unding gap\b/, 'def-gap'], [/\b[Bb]inding constraint\b/, 'def-binding'], [/\b[Ss]tep-in\b/, 'def-stepin'],
+      [/\b(?:[Cc]ash sweep|lock-up)\b/, 'def-sweep'], [/\b(?:[Aa]probación condicionada|[Cc]onditional approval)\b/, 'def-cond'],
+      num('390(?:\\.00)?', 'cifra-390'), num('130(?:\\.00)?', 'cifra-130'), num('19\\.01', 'cifra-19-01'),
+      num('3\\.17', 'cifra-idc-anual'), num('409\\.01?', 'cifra-409-01'), num('172\\.79', 'cifra-172-79'),
+      num('57\\.60?', 'cifra-57-60'), num('236\\.22', 'cifra-236-22'), num('75\\.57', 'cifra-equity-anual'),
+      num('94\\.49', 'cifra-94-49'), num('141\\.73', 'cifra-141-73'), num('42\\.25%', 'cifra-42-25'),
+      num('57\\.75%', 'cifra-57-75'), num('5\\.5%', 'cifra-5-5'), num('70:30|70%', 'cifra-70'),
+      num('295\\.8|296', 'cifra-295-8'), num('1\\.24x', 'cifra-1-24'), num('1\\.81x', 'cifra-1-81'),
+      num('22\\.00|22(?=m\\b)', 'cifra-22'), num('17\\.74', 'cifra-17-74'), num('1\\.52%', 'cifra-1-52'),
+      num('2\\.60%', 'cifra-2-60')
+    ].filter(([, id]) => document.getElementById(id));
+    const tipFor = id => {
+      const row = document.getElementById(id).closest('tr');
+      return row ? [...row.cells].map(c => c.textContent.trim()).filter(Boolean).join(' · ') : '';
+    };
+    const skip = '#TOC, #title-block-header, h1, h2, h3, h4, thead, pre, code, a, math, blockquote, .badge, .en, section.footnotes';
+    const noLinkSections = new Set(['', 'plan-de-lectura', 'glosario', 'cifras']);
+    const textNodes = [];
+    let section = '';
+    const tw = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+    while (tw.nextNode()) {
+      const n = tw.currentNode;
+      if (n.nodeType === 1) { if (n.tagName === 'H2') section = n.id; continue; }
+      if (noLinkSections.has(section) || !n.nodeValue.trim() || n.parentNode.closest(skip)) continue;
+      textNodes.push([n, section]);
+    }
+    const usedBySection = new Map();
+    const linkText = (node, used) => {
+      let best = null;
+      for (const [re, id] of refs) {
+        if (used.has(id)) continue;
+        const m = re.exec(node.nodeValue);
+        if (m && (!best || m.index < best.start)) best = { start: m.index, end: m.index + m[0].length, id };
+      }
+      if (!best) return;
+      used.add(best.id);
+      const rest = node.splitText(best.end);
+      const a = document.createElement('a');
+      a.className = 'defref';
+      a.href = '#' + best.id;
+      a.title = tipFor(best.id);
+      a.textContent = '[?]';
+      rest.parentNode.insertBefore(a, rest);
+      linkText(rest, used);
+    };
+    textNodes.forEach(([n, sec]) => {
+      if (!usedBySection.has(sec)) usedBySection.set(sec, new Set());
+      linkText(n, usedBySection.get(sec));
+    });
+
+    // "Back" button while reading a definition reached from a [?] marker.
+    const back = document.createElement('button');
+    back.id = 'def-back';
+    back.textContent = '↩ Volver';
+    back.title = 'Volver a donde estabas';
+    back.addEventListener('click', () => history.back());
+    document.body.appendChild(back);
+    const syncDef = () => {
+      const h = decodeURIComponent(location.hash.slice(1));
+      const isDef = /^(def|cifra)-/.test(h);
+      back.style.display = isDef ? 'block' : 'none';
+      document.querySelectorAll('tr.hit').forEach(r => r.classList.remove('hit'));
+      const row = isDef && document.getElementById(h) && document.getElementById(h).closest('tr');
+      if (row) row.classList.add('hit');
+    };
+    window.addEventListener('hashchange', syncDef);
+    syncDef();
+
     // Wide tables scroll horizontally instead of breaking the layout on phones.
     document.querySelectorAll('table').forEach(t => {
       const wrap = document.createElement('div');
@@ -120,13 +198,14 @@
 <li><a href="#ensayo" id="toc-ensayo"><span class="toc-section-number">12</span> Ensayo final [P2]</a></li>
 <li><a href="#adversarial" id="toc-adversarial"><span class="toc-section-number">13</span> Revisión adversarial de cada cifra [P3]</a></li>
 <li><a href="#tasa-hedge-y-moneda" id="toc-tasa-hedge-y-moneda"><span class="toc-section-number">14</span> Tasa, hedge y moneda [P3]</a></li>
-<li><a href="#glosario" id="toc-glosario"><span class="toc-section-number">15</span> Glosario [P3]</a></li>
-<li><a href="#mapa-slides" id="toc-mapa-slides"><span class="toc-section-number">16</span> Mapa de slides y fuentes [P3]</a></li>
+<li><a href="#glosario" id="toc-glosario"><span class="toc-section-number">15</span> Glosario de términos [P3]</a></li>
+<li><a href="#cifras" id="toc-cifras"><span class="toc-section-number">16</span> Diccionario de cifras [P3]</a></li>
+<li><a href="#mapa-slides" id="toc-mapa-slides"><span class="toc-section-number">17</span> Mapa de slides y fuentes [P3]</a></li>
 <li><a href="#notas" id="toc-notas">Notas</a></li>
 </ul>
 </nav>
 <div class="callout key">
-<p><strong>Cómo leer esta guía.</strong> Cada sección tiene una prioridad. Si tienes poco tiempo, lee <strong>solo las [P1]</strong> en el orden indicado (≈ 45 min). Las <strong>[P2]</strong> cubren lo necesario del resto del caso para la ronda de preguntas y las <strong>[P3]</strong> son material de consulta. Junto a los conceptos verás su traducción con la etiqueta <span class="en">English term</span>: así sabes cómo decirlo en la exposición. Los números pequeños en superíndice son <strong>notas al pie</strong>: haz clic para ver el detalle técnico y vuelve con ↩︎.</p>
+<p><strong>Cómo leer esta guía.</strong> Cada sección tiene una prioridad. Si tienes poco tiempo, lee <strong>solo las [P1]</strong> en el orden indicado (≈ 45 min). Las <strong>[P2]</strong> cubren lo necesario del resto del caso para la ronda de preguntas y las <strong>[P3]</strong> son material de consulta. Junto a los conceptos verás su traducción con la etiqueta <span class="en">English term</span>: así sabes cómo decirlo en la exposición. Los marcadores <strong>[?]</strong> junto a un término o una cifra te llevan a su definición (al pasar el mouse ves un resumen). Los números pequeños en superíndice son <strong>notas al pie</strong>: haz clic para ver el detalle técnico y vuelve con ↩︎.</p>
 </div>
 <h2 class="unnumbered" id="plan-de-lectura">Plan de lectura</h2>
 <div class="callout key">
@@ -228,11 +307,11 @@
 <td>Autoevaluarte antes de exponer.</td>
 </tr>
 <tr>
-<td style="text-align: center;">13–16</td>
-<td><a href="#adversarial">Adversarial</a>, <a href="#tasa-hedge-y-moneda">tasa</a>, <a href="#glosario">glosario</a>, <a href="#mapa-slides">slides</a></td>
+<td style="text-align: center;">13–17</td>
+<td><a href="#adversarial">Adversarial</a>, <a href="#tasa-hedge-y-moneda">tasa</a>, <a href="#glosario">glosario</a>, <a href="#cifras">cifras</a>, <a href="#mapa-slides">slides</a></td>
 <td style="text-align: center;">[P3]</td>
 <td style="text-align: center;">consulta</td>
-<td>Buscar un dato puntual.</td>
+<td>Buscar un término o una cifra puntual.</td>
 </tr>
 </tbody>
 </table>
@@ -2176,7 +2255,8 @@ Italy-B: debe poner US$141.73m, ≈<strong>2.7 veces sus activos totales</strong
 </tbody>
 </table>
 <hr />
-<h2 data-number="15" id="glosario"><span class="header-section-number">15</span> Glosario [P3]</h2>
+<h2 data-number="15" id="glosario"><span class="header-section-number">15</span> Glosario de términos [P3]</h2>
+<p>Los marcadores <strong>[?]</strong> del texto te traen aquí; usa <strong>↩︎ Volver</strong> para regresar.</p>
 <table>
 <thead>
 <tr>
@@ -2189,171 +2269,341 @@ Italy-B: debe poner US$141.73m, ≈<strong>2.7 veces sus activos totales</strong
 <tbody>
 <tr>
 <td>Vehículo de propósito especial</td>
-<td><strong>SPV</strong> (Special Purpose Vehicle)</td>
+<td><span id="def-spv"><strong>SPV</strong> (Special Purpose Vehicle)</span></td>
 <td>Empresa creada solo para el proyecto.</td>
 <td>Rutas de Tapiocapolis SPV.</td>
 </tr>
 <tr>
 <td>Fuentes y usos</td>
-<td><strong>Sources &amp; Uses</strong></td>
+<td><span id="def-su"><strong>Sources &amp; Uses</strong></span></td>
 <td>Tabla de origen y aplicación de fondos.</td>
 <td>409.01 = 409.01.</td>
 </tr>
 <tr>
 <td>Inversión de capital</td>
-<td><strong>CAPEX</strong> (capital expenditure)</td>
+<td><span id="def-capex"><strong>CAPEX</strong> (capital expenditure)</span></td>
 <td>Inversión para construir.</td>
 <td>US$390m, 2023–2025.</td>
 </tr>
 <tr>
 <td>Intereses durante construcción</td>
-<td><strong>IDC</strong> (interest during construction)</td>
+<td><span id="def-idc"><strong>IDC</strong> (interest during construction)</span></td>
 <td>Interés antes de tener ingresos.</td>
 <td>US$19.01m, pagado por equity.</td>
 </tr>
 <tr>
 <td>Desembolso</td>
-<td><strong>drawdown / disbursement</strong></td>
+<td><span id="def-drawdown"><strong>drawdown / disbursement</strong></span></td>
 <td>Entrega de una parte del préstamo.</td>
 <td>3 × US$57.60m.</td>
 </tr>
 <tr>
 <td>Saldo pendiente</td>
-<td><strong>outstanding balance</strong></td>
+<td><span id="def-saldo"><strong>outstanding balance</strong></span></td>
 <td>Deuda que aún se debe.</td>
 <td>172.79 al final de 2025.</td>
 </tr>
 <tr>
 <td>Apalancamiento</td>
-<td><strong>leverage</strong></td>
+<td><span id="def-leverage"><strong>leverage</strong></span></td>
 <td>Proporción de deuda.</td>
 <td>Máximo 70%; real 42.25%.</td>
 </tr>
 <tr>
 <td>Capital de los accionistas</td>
-<td><strong>equity</strong></td>
+<td><span id="def-equity"><strong>equity</strong></span></td>
 <td>Dinero que ponen los sponsors.</td>
 <td>US$236.22m.</td>
 </tr>
 <tr>
 <td>Utilidad operativa antes de D&amp;A</td>
-<td><strong>EBITDA</strong></td>
+<td><span id="def-ebitda"><strong>EBITDA</strong></span></td>
 <td>Revenue − OPEX.</td>
 <td>US$22m en 2026.</td>
 </tr>
 <tr>
 <td>Caja disponible para la deuda</td>
-<td><strong>CFADS</strong> (cash flow available for debt service)</td>
+<td><span id="def-cfads"><strong>CFADS</strong> (cash flow available for debt service)</span></td>
 <td>EBITDA − impuestos.</td>
 <td>US$22m en 2026.</td>
 </tr>
 <tr>
 <td>Servicio de deuda</td>
-<td><strong>debt service</strong></td>
+<td><span id="def-ds"><strong>debt service</strong></span></td>
 <td>Interés + principal del año.</td>
 <td>US$17.74m en 2026.</td>
 </tr>
 <tr>
 <td>Ratio de cobertura del servicio de deuda</td>
-<td><strong>DSCR</strong></td>
+<td><span id="def-dscr"><strong>DSCR</strong></span></td>
 <td>CFADS ÷ debt service.</td>
 <td>1.24x.</td>
 </tr>
 <tr>
 <td>Ratio de cobertura de la vida del préstamo</td>
-<td><strong>LLCR</strong></td>
+<td><span id="def-llcr"><strong>LLCR</strong></span></td>
 <td>VP del CFADS hasta el vencimiento ÷ deuda.</td>
 <td>1.24x.</td>
 </tr>
 <tr>
 <td>Ratio de cobertura de la vida del proyecto</td>
-<td><strong>PLCR</strong></td>
+<td><span id="def-plcr"><strong>PLCR</strong></span></td>
 <td>VP del CFADS hasta el fin de la concesión ÷ deuda.</td>
 <td>1.81x mínimo.</td>
 </tr>
 <tr>
 <td>Valor presente</td>
-<td><strong>present value (PV / NPV)</strong></td>
+<td><span id="def-vp"><strong>present value (PV / NPV)</strong></span></td>
 <td>Valor hoy de flujos futuros.</td>
 <td>Deuda = VP de las cuotas al 5.5%.</td>
 </tr>
 <tr>
 <td>Repago esculpido</td>
-<td><strong>sculpted repayment / sculpting</strong></td>
+<td><span id="def-sculpt"><strong>sculpted repayment / sculpting</strong></span></td>
 <td>Cuota ajustada al flujo de cada año.</td>
 <td>Cuota = CFADS ÷ 1.24.</td>
 </tr>
 <tr>
 <td>Cola</td>
-<td><strong>tail</strong></td>
+<td><span id="def-tail"><strong>tail</strong></span></td>
 <td>Años de concesión después de pagar la deuda.</td>
 <td>8 años (2038–2045).</td>
 </tr>
 <tr>
 <td>Holgura</td>
-<td><strong>headroom</strong></td>
+<td><span id="def-headroom"><strong>headroom</strong></span></td>
 <td>Margen sobre el mínimo exigido.</td>
 <td>Cero en el caso base.</td>
 </tr>
 <tr>
 <td>Compromiso financiero</td>
-<td><strong>covenant</strong></td>
+<td><span id="def-covenant"><strong>covenant</strong></span></td>
 <td>Condición que el prestatario debe cumplir.</td>
 <td>DSCR ≥ 1.24x.</td>
 </tr>
 <tr>
 <td>Restricción que manda</td>
-<td><strong>binding constraint</strong></td>
+<td><span id="def-binding"><strong>binding constraint</strong></span></td>
 <td>El límite que de verdad restringe.</td>
 <td>El DSCR, no el 70%.</td>
 </tr>
 <tr>
 <td>Brecha de financiamiento</td>
-<td><strong>funding gap</strong></td>
+<td><span id="def-gap"><strong>funding gap</strong></span></td>
 <td>Dinero que falta para terminar la obra.</td>
 <td>Riesgo si sube el CAPEX.</td>
 </tr>
 <tr>
 <td>Cuentas de reserva</td>
-<td><strong>DSRA / MMRA</strong></td>
+<td><span id="def-reservas"><strong>DSRA / MMRA</strong></span></td>
 <td>Reserva para servicio de deuda / mantenimiento mayor.</td>
 <td>Excluidas por instrucción; las pedimos.</td>
 </tr>
 <tr>
 <td>Barrido de caja / bloqueo de dividendos</td>
-<td><strong>cash sweep / dividend lock-up</strong></td>
+<td><span id="def-sweep"><strong>cash sweep / dividend lock-up</strong></span></td>
 <td>Prepagar con caja extra / frenar dividendos si caen los ratios.</td>
 <td>Condiciones recomendadas.</td>
 </tr>
 <tr>
 <td>Derecho de intervención</td>
-<td><strong>step-in rights</strong></td>
+<td><span id="def-stepin"><strong>step-in rights</strong></span></td>
 <td>Los lenders intervienen si falla un contratista.</td>
 <td>Condición recomendada.</td>
 </tr>
 <tr>
 <td>Fecha de inicio de operación</td>
-<td><strong>COD</strong> (commercial operation date)</td>
+<td><span id="def-cod"><strong>COD</strong> (commercial operation date)</span></td>
 <td>Cuando empieza a cobrar peajes.</td>
 <td>2026.</td>
 </tr>
 <tr>
 <td>Tasa interna de retorno</td>
-<td><strong>IRR</strong> (internal rate of return)</td>
+<td><span id="def-irr"><strong>IRR</strong> (internal rate of return)</span></td>
 <td>Rentabilidad anual equivalente.</td>
 <td>Sponsor 1.52%; proyecto 2.60%.</td>
 </tr>
 <tr>
 <td>Aprobación condicionada</td>
-<td><strong>conditional approval</strong></td>
+<td><span id="def-cond"><strong>conditional approval</strong></span></td>
 <td>Sí, pero con condiciones.</td>
 <td>Nuestra recomendación.</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 data-number="16" id="mapa-slides"><span class="header-section-number">16</span> Mapa de slides y fuentes [P3]</h2>
-<h3 data-number="16.1" id="reparto-del-deck-bilingüe"><span class="header-section-number">16.1</span> Reparto del deck bilingüe</h3>
+<h2 data-number="16" id="cifras"><span class="header-section-number">16</span> Diccionario de cifras [P3]</h2>
+<p>Cada número clave de la guía, con qué es, de dónde sale y cómo decirlo en inglés. Los marcadores <strong>[?]</strong> del texto te traen aquí; usa <strong>↩︎ Volver</strong> para regresar.</p>
+<table>
+<thead>
+<tr>
+<th>Cifra</th>
+<th>Qué es</th>
+<th>Cómo sale</th>
+<th>Etiqueta</th>
+<th>English</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span id="cifra-390"><strong>US$390m</strong></span></td>
+<td>Costo total de construcción (CAPEX).</td>
+<td>Dato del caso.</td>
+<td>[CASE DATA]</td>
+<td><em>construction CAPEX</em></td>
+</tr>
+<tr>
+<td><span id="cifra-130"><strong>US$130m</strong></span></td>
+<td>CAPEX de cada año de construcción.</td>
+<td>390 ÷ 3 (repartido en partes iguales).</td>
+<td>[CASE DATA]</td>
+<td><em>annual CAPEX</em></td>
+</tr>
+<tr>
+<td><span id="cifra-19-01"><strong>US$19.01m</strong></span></td>
+<td>Intereses durante construcción (IDC), total 2023–2025.</td>
+<td>3.17 + 6.34 + 9.50 = 0.11 × deuda.</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>total IDC</em></td>
+</tr>
+<tr>
+<td><span id="cifra-idc-anual"><strong>3.17 / 6.34 / 9.50</strong></span></td>
+<td>IDC de 2023, 2024 y 2025.</td>
+<td>5.5% × saldo de deuda tras cada desembolso (57.60 / 115.19 / 172.79).</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>annual IDC</em></td>
+</tr>
+<tr>
+<td><span id="cifra-409-01"><strong>US$409.01m</strong></span></td>
+<td>Usos totales: todo el dinero que necesita la construcción.</td>
+<td>390.00 CAPEX + 19.01 IDC.</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>total uses</em></td>
+</tr>
+<tr>
+<td><span id="cifra-172-79"><strong>US$172.79m</strong></span></td>
+<td>Deuda senior máxima que el proyecto puede pagar.</td>
+<td>Valor presente al 5.5% de las cuotas CFADS ÷ 1.24 (2026–2037).</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>senior debt, DSCR-sized</em></td>
+</tr>
+<tr>
+<td><span id="cifra-57-60"><strong>US$57.60m</strong></span></td>
+<td>Desembolso de deuda de cada año.</td>
+<td>172.79 ÷ 3 desembolsos iguales.</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>annual drawdown</em></td>
+</tr>
+<tr>
+<td><span id="cifra-236-22"><strong>US$236.22m</strong></span></td>
+<td>Equity total de los sponsors.</td>
+<td>409.01 − 172.79 (el residual).</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>sponsor equity</em></td>
+</tr>
+<tr>
+<td><span id="cifra-equity-anual"><strong>75.57 / 78.74 / 81.91</strong></span></td>
+<td>Equity de 2023, 2024 y 2025.</td>
+<td>Usos del año − 57.60 de deuda. Sube porque sube el IDC.</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>annual equity contribution</em></td>
+</tr>
+<tr>
+<td><span id="cifra-94-49"><strong>US$94.49m</strong></span></td>
+<td>Equity de Italy-A.</td>
+<td>236.22 × 40%.</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>Italy-A equity</em></td>
+</tr>
+<tr>
+<td><span id="cifra-141-73"><strong>US$141.73m</strong></span></td>
+<td>Equity de Italy-B.</td>
+<td>236.22 × 60%. ≈2.7 veces sus activos.</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>Italy-B equity</em></td>
+</tr>
+<tr>
+<td><span id="cifra-42-25"><strong>42.25%</strong></span></td>
+<td>Proporción de deuda sobre los usos totales.</td>
+<td>172.79 ÷ 409.01. Debe ser ≤ 70%.</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>debt to total uses</em></td>
+</tr>
+<tr>
+<td><span id="cifra-57-75"><strong>57.75%</strong></span></td>
+<td>Proporción de equity sobre los usos totales.</td>
+<td>236.22 ÷ 409.01.</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>equity to total uses</em></td>
+</tr>
+<tr>
+<td><span id="cifra-5-5"><strong>5.5%</strong></span></td>
+<td>Tasa de interés de la deuda.</td>
+<td>Dato del caso (market sounding).</td>
+<td>[CASE DATA]</td>
+<td><em>interest rate</em></td>
+</tr>
+<tr>
+<td><span id="cifra-70"><strong>70% / 70:30</strong></span></td>
+<td>Leverage máximo que aceptan los bancos (deuda : equity).</td>
+<td>Dato del caso. Es un <strong>techo</strong>, no una meta.</td>
+<td>[CASE DATA]</td>
+<td><em>maximum leverage, leverage cap</em></td>
+</tr>
+<tr>
+<td><span id="cifra-295-8"><strong>≈US$295.8m</strong></span></td>
+<td>Deuda si se usara el 70% (escenario descartado).</td>
+<td>0.70 × (390 + 0.11 × deuda). DSCR ≈0.72–0.74x: no cumple.</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>70:30 alternative case</em></td>
+</tr>
+<tr>
+<td><span id="cifra-1-24"><strong>1.24x</strong></span></td>
+<td>DSCR mínimo exigido por los bancos y resultado del modelo (también el LLCR).</td>
+<td>Mínimo: dato del caso. Resultado: CFADS ÷ cuota, igual a 1.24 cada año por el sculpting.</td>
+<td>[CASE DATA] / [MODEL OUTPUT]</td>
+<td><em>one point two four times</em></td>
+</tr>
+<tr>
+<td><span id="cifra-1-81"><strong>1.81x</strong></span></td>
+<td>PLCR mínimo (2026).</td>
+<td>VP del CFADS 2026–2045 (313.61) ÷ deuda (172.79).</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>minimum PLCR</em></td>
+</tr>
+<tr>
+<td><span id="cifra-22"><strong>US$22.00m</strong></span></td>
+<td>EBITDA y CFADS de 2026 (primer año de operación).</td>
+<td>72 de ingresos − 50 de OPEX; impuesto 0 porque el EBT es negativo.</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>Year-1 CFADS</em></td>
+</tr>
+<tr>
+<td><span id="cifra-17-74"><strong>US$17.74m</strong></span></td>
+<td>Cuota de deuda de 2026 (interés + principal).</td>
+<td>22.00 ÷ 1.24.</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>Year-1 debt service</em></td>
+</tr>
+<tr>
+<td><span id="cifra-1-52"><strong>1.52%</strong></span></td>
+<td>IRR de los sponsors.</td>
+<td>TIR de los aportes (2023–2025) y dividendos (2026–2045).</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>sponsors’ IRR</em></td>
+</tr>
+<tr>
+<td><span id="cifra-2-60"><strong>2.60%</strong></span></td>
+<td>IRR del proyecto sin deuda, después de impuestos.</td>
+<td>TIR de −CAPEX y EBITDA − impuestos.</td>
+<td>[MODEL OUTPUT]</td>
+<td><em>unlevered project IRR</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 data-number="17" id="mapa-slides"><span class="header-section-number">17</span> Mapa de slides y fuentes [P3]</h2>
+<h3 data-number="17.1" id="reparto-del-deck-bilingüe"><span class="header-section-number">17.1</span> Reparto del deck bilingüe</h3>
 <table>
 <thead>
 <tr>
@@ -2426,13 +2676,13 @@ Italy-B: debe poner US$141.73m, ≈<strong>2.7 veces sus activos totales</strong
 </tbody>
 </table>
 <p>Presenten <strong>un solo bloque de idioma</strong>; oculten el otro antes de exponer.</p>
-<h3 data-number="16.2" id="qué-documento-manda-si-una-cifra-no-coincide"><span class="header-section-number">16.2</span> Qué documento manda si una cifra no coincide</h3>
+<h3 data-number="17.2" id="qué-documento-manda-si-una-cifra-no-coincide"><span class="header-section-number">17.2</span> Qué documento manda si una cifra no coincide</h3>
 <ol type="1">
 <li><strong>PDF del caso</strong> [CASE DATA]: hechos y términos.</li>
 <li><strong>Excel final</strong> [MODEL OUTPUT]: deuda, IDC, usos, ratios e IRR.</li>
 <li><strong>Respuesta escrita</strong> [CREDIT RECOMMENDATION]: riesgos y mitigantes. Ojo: mezcla cifras del escenario de alta deuda (US$76m de Italy-B, IDC 32.5, +US$3m por 100 bp).</li>
 </ol>
-<h3 data-number="16.3" id="revisión-del-excel-y-de-la-respuesta-escrita"><span class="header-section-number">16.3</span> Revisión del Excel y de la respuesta escrita</h3>
+<h3 data-number="17.3" id="revisión-del-excel-y-de-la-respuesta-escrita"><span class="header-section-number">17.3</span> Revisión del Excel y de la respuesta escrita</h3>
 <table>
 <thead>
 <tr>
