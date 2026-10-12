@@ -85,7 +85,7 @@
       const row = document.getElementById(id).closest('tr');
       return row ? [...row.cells].map(c => c.textContent.trim()).filter(Boolean).join(' · ') : '';
     };
-    const skip = '#TOC, #title-block-header, h1, h2, h3, h4, thead, pre, code, a, math, blockquote, .badge, .en, section.footnotes';
+    const skip = '#TOC, #title-block-header, h1, h2, h3, h4, thead, pre, code, a, math, blockquote, .badge, .en, .duo, section.footnotes';
     const noLinkSections = new Set(['', 'plan-de-lectura', 'glosario', 'cifras']);
     const textNodes = [];
     let section = '';
@@ -263,7 +263,7 @@
 <td><a href="#guion">6. Guion de tus dos slides y vocabulario</a></td>
 <td style="text-align: center;">[P1]</td>
 <td style="text-align: center;">15 min</td>
-<td>Exponer tus dos slides en ≈3 min 20 s con el <a href="#guion-en">guion en inglés</a> (y su versión en español), y decir los términos y números en inglés.</td>
+<td>Exponer tus dos slides en ≈3 min 20 s con el <a href="#guion-bilingue">guion en inglés y español</a> y decir los términos y números en inglés.</td>
 </tr>
 <tr>
 <td style="text-align: center;">7</td>
@@ -742,7 +742,59 @@ Risk    →  cash-flow impact (CFADS)            →  contractual or financial m
 <blockquote>
 <p><strong>EN:</strong> <em>“The 1.24x is per dollar of debt service, not per dollar of revenue. The sponsors own the project and bear the first loss, because equity is paid last. The banks are senior lenders: they are paid first and earn a fixed 5.5%, but since the loan is non-recourse, they rely only on the project’s cash flow. That is why they require a DSCR cushion.”</em></p>
 </blockquote>
-<h3 data-number="2.5" id="capex-drawdown-e-idc"><span class="header-section-number">2.5</span> CAPEX, drawdown e IDC</h3>
+<h3 data-number="2.5" id="capex-vs-opex"><span class="header-section-number">2.5</span> CAPEX vs. OPEX: ¿son lo mismo?</h3>
+<p><strong>No.</strong> Los dos son gastos, pero de tipo distinto:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>CAPEX</strong> (EN: <em>capital expenditure</em>)</th>
+<th><strong>OPEX</strong> (EN: <em>operating expenditure</em>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qué es</td>
+<td><strong>Inversión para construir</strong> el activo</td>
+<td><strong>Costos de operarlo</strong> cada año</td>
+</tr>
+<tr>
+<td>En este caso</td>
+<td>La carretera, los túneles, las plazas de peaje y los puentes</td>
+<td>Personal, mantenimiento, operación de túneles, seguros y fee del operador</td>
+</tr>
+<tr>
+<td>Cuánto</td>
+<td><strong>US$390m</strong> en total</td>
+<td><strong>US$50m</strong> el primer año (+2.3% anual)</td>
+</tr>
+<tr>
+<td>Cuándo</td>
+<td><strong>Una vez</strong>, durante la construcción (2023–2025)</td>
+<td><strong>Todos los años</strong> de operación (2026–2045)</td>
+</tr>
+<tr>
+<td>Dónde aparece</td>
+<td>En <strong>Sources &amp; Uses</strong> (tu tabla): es el uso principal</td>
+<td>En el flujo de operación: Revenue − OPEX = EBITDA</td>
+</tr>
+<tr>
+<td>Quién lo paga</td>
+<td><strong>Deuda + equity</strong></td>
+<td><strong>Los peajes</strong></td>
+</tr>
+<tr>
+<td>¿Es dato?</td>
+<td>Sí, del caso</td>
+<td>Sí, del caso</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Analogía:</strong> el CAPEX es <strong>comprar el auto</strong>; el OPEX es <strong>la gasolina y el mantenimiento</strong> de cada mes.</p>
+<blockquote>
+<p><strong>EN:</strong> <em>“CAPEX is the one-off investment to build the road, US$390 million during construction, funded by debt and equity. OPEX is the annual cost of running it, US$50 million in Year 1, paid from toll revenue.”</em></p>
+</blockquote>
+<h3 data-number="2.6" id="capex-drawdown-e-idc"><span class="header-section-number">2.6</span> CAPEX, drawdown e IDC</h3>
 <ul>
 <li><strong>CAPEX</strong> (<span class="en">capital expenditure</span>)<strong>:</strong> la inversión para construir, <strong>US$390m</strong> repartidos en partes iguales (<span class="en">spread evenly</span>): <strong>US$130m</strong> por año en 2023, 2024 y 2025. [CASE DATA]</li>
 <li><strong>Drawdown (desembolso):</strong> cada vez que el banco entrega una parte del préstamo. El caso dice <strong>tres partes iguales al inicio de cada año de construcción</strong> (<span class="en">three equal tranches at the start of each construction year</span>). [CASE DATA]</li>
@@ -1045,20 +1097,8 @@ Risk    →  cash-flow impact (CFADS)            →  contractual or financial m
 </tr>
 </tbody>
 </table>
-<h3 data-number="3.7" id="guion-de-la-slide-9-6090-segundos"><span class="header-section-number">3.7</span> Guion de la slide 9 (60–90 segundos)</h3>
-<blockquote>
-<p>“This slide summarises the assumptions behind our model. We only use data stated in the case, plus a few modelling criteria that we declare explicitly.</p>
-<p>First, construction and operations. CAPEX is US$390m, spread evenly over three years. Toll revenue starts at US$72m and grows 2.5% a year, while operating costs start at US$50m and grow 2.3%. That leaves a thin margin: EBITDA is only US$22m in the first year.</p>
-<p>Second, the debt terms from the banks’ market sounding: a 5.5% interest rate, three equal drawdowns at the start of each construction year, interest-only during construction, and twelve years of amortisation.</p>
-<p>Third, taxes: a 30% rate from operations, with straight-line depreciation over 20 years. As the case instructs, there are no reserve accounts, and the case gives no working capital or contingency.</p>
-<p>Finally, debt sizing. The banks allow up to 70% leverage, but they also require a minimum DSCR of 1.24 times. We define CFADS as EBITDA less taxes and sculpt the debt service at CFADS divided by 1.24. Under that test, the project can only carry US$172.79m of debt, so the DSCR, not the 70% cap, is the binding constraint. IDC is paid in cash by equity. Let me now show how these assumptions translate into the construction funding plan.”</p>
-</blockquote>
-<p><strong>Para entrar (después de los riesgos):</strong> <em>“Thank you. Before we look at the numbers, let me set out the assumptions behind our model.”</em></p>
-<p><strong>Transición a tu tabla (slide 10):</strong> <em>“With these assumptions in place, let’s see how the construction period is funded.”</em></p>
-<p><strong>Versión corta en español:</strong></p>
-<blockquote>
-<p>“Esta lámina resume los supuestos del modelo: solo usamos datos del caso y unos pocos criterios propios que declaramos. El CAPEX es US$390m en tres años; los ingresos parten en US$72m y crecen 2.5%, y los costos parten en US$50m y crecen 2.3%, así que el margen es delgado. La deuda paga 5.5%, se desembolsa en tres partes iguales al inicio de cada año, tiene tres años de solo intereses y doce de amortización. El impuesto es 30% desde la operación, con depreciación lineal a 20 años, y no hay reservas por instrucción del caso. Los bancos permiten hasta 70% de deuda, pero exigen un DSCR mínimo de 1.24x: con ese límite, el proyecto solo soporta US$172.79m. El IDC lo paga el equity.”</p>
-</blockquote>
+<h3 data-number="3.7" id="guion-de-esta-slide"><span class="header-section-number">3.7</span> Guion de esta slide</h3>
+<p>El guion de Key Assumptions está junto con el de tu tabla, en inglés y español y con tiempos, en <a href="#guion-bilingue">Guion de tus dos slides</a>.</p>
 <h3 data-number="3.8" id="preguntas-probables-sobre-key-assumptions"><span class="header-section-number">3.8</span> Preguntas probables sobre Key Assumptions</h3>
 <p><strong>¿Cuáles son datos del caso y cuáles son supuestos de ustedes?</strong> (<span class="en">Which are case data and which are your assumptions?</span>)<br />
 Del caso: CAPEX, ingresos, OPEX, tasa, desembolsos, plazo, impuesto, depreciación, 70:30 y 1.24x. Nuestros: la definición del CFADS, el sculpting, el IDC pagado por equity, y no incluir capital de trabajo ni contingencia.</p>
@@ -1878,11 +1918,11 @@ Deuda × (1 − 0.077) = 273   →   Deuda ≈ 295.8   ·   IDC ≈ 32.5   ·   
 </blockquote>
 <hr />
 <h2 data-number="6" id="guion"><span class="header-section-number">6</span> Guion de tus dos slides y vocabulario en inglés [P1]</h2>
-<h3 data-number="6.1" id="guion-es"><span class="header-section-number">6.1</span> Guion completo en español con tiempos (tus dos slides)</h3>
+<h3 data-number="6.1" id="guion-bilingue"><span class="header-section-number">6.1</span> Guion de tus dos slides: inglés y español juntos</h3>
+<p><span id="guion-es"></span><span id="guion-en"></span></p>
 <div class="callout key">
-<p><strong>Tiempo objetivo: ≈3 min 20 s en total</strong> (Key Assumptions ≈1 min 25 s + Sources &amp; Uses ≈1 min 45 s + transiciones). La exposición del grupo dura 15–20 minutos entre cinco personas, así que ≈3–4 minutos por persona es lo justo. A ritmo normal (≈150 palabras por minuto), este guion dura eso.</p>
-<p><strong>El texto en inglés que dirás está más abajo:</strong> <a href="#guion-en">guion completo en inglés</a>.</p>
-<p><strong>Cómo usarlo:</strong> no lo leas palabra por palabra; apréndete la <strong>idea de cada bloque</strong> y las cifras. Al hablar, redondea (409, 172.8, 236); si te preguntan, da la cifra exacta. Las indicaciones entre corchetes son acciones, no se dicen.</p>
+<p><strong>Tiempo objetivo: ≈3 min 20 s</strong> (Key Assumptions ≈1 min 25 s + Sources &amp; Uses ≈1 min 45 s + transiciones). La exposición del grupo dura 15–20 minutos entre cinco personas, así que ≈3–4 minutos por persona es lo justo.</p>
+<p><strong>Cómo usarlo:</strong> a la izquierda está lo que <strong>dices en inglés</strong>; a la derecha, la <strong>traducción</strong> para que entiendas cada frase. No lo leas palabra por palabra: apréndete la <strong>idea de cada bloque</strong> y las cifras. Al hablar, redondea (409, 172.8, 236); si te preguntan, da la cifra exacta. Las frases en <strong>negrita</strong> son tus dos mensajes clave: haz una pausa antes de decirlas. Lo que va entre corchetes son acciones, no se dice.</p>
 </div>
 <table>
 <thead>
@@ -1896,7 +1936,7 @@ Deuda × (1 − 0.077) = 273   →   Deuda ≈ 295.8   ·   IDC ≈ 32.5   ·   
 <tr>
 <td>Entrada</td>
 <td>0:00–0:10</td>
-<td>Tomar la palabra y anunciar las dos slides.</td>
+<td>Tomar la palabra después de los riesgos.</td>
 </tr>
 <tr>
 <td>Key Assumptions: operación</td>
@@ -1914,7 +1954,7 @@ Deuda × (1 − 0.077) = 273   →   Deuda ≈ 295.8   ·   IDC ≈ 32.5   ·   
 <td>Lo que no incluimos y por qué.</td>
 </tr>
 <tr>
-<td>Key Assumptions: mensaje</td>
+<td>Key Assumptions: dos restricciones</td>
 <td>1:10–1:30</td>
 <td>El DSCR manda, no el 70%.</td>
 </tr>
@@ -1940,102 +1980,113 @@ Deuda × (1 − 0.077) = 273   →   Deuda ≈ 295.8   ·   IDC ≈ 32.5   ·   
 </tr>
 </tbody>
 </table>
-<p><strong>[0:00–0:10] Entrada</strong> <em>(tomas la palabra después de los riesgos)</em></p>
-<blockquote>
-<p>“Gracias. Ya vimos los riesgos del proyecto. Ahora les voy a mostrar con qué supuestos armamos el modelo y cómo se financia la construcción.”</p>
-</blockquote>
-<p><strong>[0:10–0:35] Key Assumptions: construcción y operación</strong></p>
-<blockquote>
-<p>“Lo primero: casi todo lo que ven aquí viene directamente del caso. Solo hay unos pocos criterios que definimos nosotros, y los vamos a decir con claridad.</p>
-<p>La obra cuesta 390 millones de dólares y se reparte igual en tres años. Ya en operación, los peajes arrancan en 72 millones y crecen 2.5% al año; los costos arrancan en 50 millones y crecen 2.3%. O sea, el margen es delgado: el primer año quedan apenas 22 millones de caja.”</p>
-</blockquote>
-<p><strong>[0:35–0:55] Key Assumptions: deuda</strong> <em>[señala el bloque Debt Assumptions]</em></p>
-<blockquote>
-<p>“Por el lado de la deuda, estas son las condiciones que dieron los bancos: tasa de 5.5%, tres desembolsos iguales al inicio de cada año de construcción, tres años en los que solo se pagan intereses y luego doce años para devolver el capital.”</p>
-</blockquote>
-<p><strong>[0:55–1:10] Key Assumptions: impuestos y lo que no incluimos</strong></p>
-<blockquote>
-<p>“El impuesto es 30% desde que empieza la operación, con depreciación lineal a 20 años. Y, como pide el caso, no hay cuentas de reserva. Tampoco incluimos capital de trabajo ni contingencia, porque el caso no da cifras y preferimos no inventarlas; eso lo pedimos después como condición.”</p>
-</blockquote>
-<p><strong>[1:10–1:30] Key Assumptions: el mensaje</strong> <em>[señala Debt Sizing; pausa breve antes de la última frase]</em></p>
-<blockquote>
-<p>“Y aquí está lo más importante. Los bancos permiten hasta 70% de deuda, pero también exigen que la caja de cada año cubra al menos 1.24 veces la cuota. Esa segunda condición es la que manda. Con ella, el proyecto solo puede pagar 172.8 millones de deuda: bastante menos que el 70%.”</p>
-</blockquote>
-<p><strong>[1:30–1:35] Transición</strong> <em>[cambias a la slide 10]</em></p>
-<blockquote>
-<p>“Veamos cómo se traduce esto en el financiamiento de la construcción.”</p>
-</blockquote>
-<p><strong>[1:35–2:15] Sources &amp; Uses: los usos</strong> <em>[señala la parte de arriba, USES]</em></p>
-<blockquote>
-<p>“Esta tabla responde dos preguntas: cuánta plata necesita el proyecto mientras se construye y quién la pone.</p>
-<p>Arriba están los usos. El primero es la obra: 130 millones por año, 390 en total. El segundo son los intereses durante la construcción. Como la deuda se desembolsa al inicio de cada año, los intereses corren desde el primer día, y suben porque cada año debemos más: 3.2, 6.3 y 9.5 millones, unos 19 millones en total. Esos intereses los pagan los sponsors en efectivo; no se suman a la deuda. Por eso el total no es 390, sino 409 millones.”</p>
-</blockquote>
-<p><strong>[2:15–2:55] Sources &amp; Uses: las fuentes</strong> <em>[señala la parte de abajo, SOURCES]</em></p>
-<blockquote>
-<p>“Abajo están las fuentes. Los bancos ponen 172.8 millones, en tres partes iguales de 57.6. Y ojo: no es el 70% que permitían, sino lo que el proyecto realmente puede pagar con un DSCR de 1.24.</p>
-<p>El resto, unos 236 millones, lo ponen los sponsors como equity, según su participación: 40% Italy-A y 60% Italy-B. El equity sube un poco cada año simplemente porque suben los intereses.”</p>
-</blockquote>
-<p><strong>[2:55–3:20] Cierre</strong> <em>[mira al comité]</em></p>
-<blockquote>
-<p>“La tabla cuadra cada año. Pero el mensaje para el comité es este: la deuda es solo el 42% del total, porque lo que limita es la capacidad de pago y no el techo de 70%. Y eso con supuestos que, además, son favorables. Ahora mi compañero les va a mostrar el modelo de operación que hay detrás de esa capacidad de pago.”</p>
-</blockquote>
-<h4 class="unnumbered" id="versión-corta-si-les-piden-recortar-2-minutos">Versión corta, si les piden recortar (≈2 minutos)</h4>
-<blockquote>
-<p><strong>Key Assumptions (≈45 s):</strong> “Casi todo viene del caso. La obra cuesta 390 millones en tres años; los peajes arrancan en 72 y los costos en 50, así que el margen es delgado. Los bancos dan 5.5%, tres desembolsos iguales, tres años solo de intereses y doce de amortización. Permiten hasta 70% de deuda, pero exigen un DSCR de 1.24, y eso es lo que manda: el proyecto solo paga 172.8 millones.”</p>
-<p><strong>Sources &amp; Uses (≈75 s):</strong> “Durante la construcción se necesitan 409 millones: 390 de obra y 19 de intereses, que pagan los sponsors porque todavía no hay peajes. Los bancos ponen 172.8, en tres partes iguales, y los sponsors el resto, 236, en proporción 40/60. La tabla cuadra cada año, y el mensaje es que la deuda es solo el 42% porque la limita la capacidad de pago, no el techo de 70%.”</p>
-</blockquote>
-<p><strong>Tips para que suene natural:</strong></p>
-<ul>
-<li><strong>Cronométrate</strong> dos veces. Si pasas de 3:30, recorta primero el bloque de impuestos y omisiones (se puede responder en preguntas).</li>
-<li><strong>Pausa</strong> de un segundo antes de “Esa segunda condición es la que manda” y antes de “el mensaje para el comité es este”: son tus dos frases clave.</li>
-<li><strong>No leas la slide:</strong> la gente ya la ve. Di la idea y señala el número.</li>
-<li>Si te interrumpen con una pregunta, responde corto y retoma con <em>“Como les decía…”</em>.</li>
-</ul>
-<h3 data-number="6.2" id="guion-en"><span class="header-section-number">6.2</span> Guion completo en inglés con tiempos (lo que dirás)</h3>
-<div class="callout key">
-<p><strong>Este es el texto para exponer en inglés tus dos slides</strong> (≈3 min 20 s). Es el mismo orden y los mismos tiempos que el <a href="#guion-es">guion en español</a>. Las frases en <strong>negrita</strong> son tus dos mensajes clave: haz una pausa antes de decirlas.</p>
-</div>
-<p><strong>[0:00–0:10] Entrada</strong> <em>(después de los riesgos)</em></p>
-<blockquote>
+<h4 class="unnumbered" id="entrada-después-de-los-riesgos">[0:00–0:10] Entrada <em>(después de los riesgos)</em></h4>
+<div class="duo">
+<div class="col-en">
 <p>“Thank you. Before we look at the numbers, let me set out the assumptions behind our model.”</p>
-</blockquote>
-<p><strong>[0:10–0:35] Key Assumptions: construction and operations</strong></p>
-<blockquote>
+</div>
+<div class="col-es">
+<p>“Gracias. Antes de ver los números, les voy a mostrar los supuestos con los que armamos el modelo.”</p>
+</div>
+</div>
+<h4 class="unnumbered" id="key-assumptions-construcción-y-operación">[0:10–0:35] Key Assumptions: construcción y operación</h4>
+<div class="duo">
+<div class="col-en">
 <p>“Almost everything here comes directly from the case; only a few criteria are our own, and we state them clearly.</p>
 <p>CAPEX is US$390 million, spread evenly over three years. Toll revenue starts at US$72 million and grows 2.5% a year, while operating costs start at US$50 million and grow 2.3%. So the margin is thin: only US$22 million of cash in the first year.”</p>
-</blockquote>
-<p><strong>[0:35–0:55] Debt terms</strong> <em>[señala Debt Assumptions]</em></p>
-<blockquote>
+</div>
+<div class="col-es">
+<p>“Casi todo lo que ven aquí viene directamente del caso; solo unos pocos criterios son nuestros, y los decimos con claridad.</p>
+<p>La obra cuesta 390 millones de dólares y se reparte igual en tres años. Los peajes arrancan en 72 millones y crecen 2.5% al año; los costos arrancan en 50 millones y crecen 2.3%. O sea, el margen es delgado: el primer año quedan apenas 22 millones de caja.”</p>
+</div>
+</div>
+<h4 class="unnumbered" id="deuda-señala-debt-assumptions">[0:35–0:55] Deuda <em>[señala Debt Assumptions]</em></h4>
+<div class="duo">
+<div class="col-en">
 <p>“The debt terms come from the banks’ market sounding: a 5.5% interest rate, three equal drawdowns at the start of each construction year, three years of interest only, and twelve years of amortisation.”</p>
-</blockquote>
-<p><strong>[0:55–1:10] Taxes and what we exclude</strong></p>
-<blockquote>
+</div>
+<div class="col-es">
+<p>“Las condiciones de la deuda vienen del sondeo con los bancos: tasa de 5.5%, tres desembolsos iguales al inicio de cada año de construcción, tres años en que solo se pagan intereses y doce años para devolver el capital.”</p>
+</div>
+</div>
+<h4 class="unnumbered" id="impuestos-y-lo-que-no-incluimos">[0:55–1:10] Impuestos y lo que no incluimos</h4>
+<div class="duo">
+<div class="col-en">
 <p>“Taxes are 30% from operations, with 20-year straight-line depreciation; both are given by the case. As the case instructs, there are no reserve accounts, and we include no working capital or contingency, because the case gives no figures.”</p>
-</blockquote>
-<p><strong>[1:10–1:30] The key point: two constraints</strong> <em>[señala Debt Sizing; pausa antes de la frase en negrita]</em></p>
-<blockquote>
+</div>
+<div class="col-es">
+<p>“El impuesto es 30% desde que empieza la operación, con depreciación lineal a 20 años; las dos cosas las da el caso. Como pide el caso, no hay cuentas de reserva, y no incluimos capital de trabajo ni contingencia porque el caso no da cifras.”</p>
+</div>
+</div>
+<h4 class="unnumbered" id="el-punto-clave-dos-restricciones-señala-debt-sizing-pausa">[1:10–1:30] El punto clave: dos restricciones <em>[señala Debt Sizing; pausa]</em></h4>
+<div class="duo">
+<div class="col-en">
 <p>“And here is the key point. Debt sizing had <strong>two constraints</strong>: a maximum leverage of 70:30, and a minimum DSCR of 1.24 times every year. We take the lower of the two. <strong>The DSCR is the binding constraint</strong>: under it, the project can only carry US$172.8 million of debt, well below 70%.”</p>
-</blockquote>
-<p><strong>[1:30–1:35] Transición</strong> <em>[cambias a Sources &amp; Uses]</em></p>
-<blockquote>
+</div>
+<div class="col-es">
+<p>“Y aquí está lo más importante. Para dimensionar la deuda había <strong>dos restricciones</strong>: un máximo de 70% de deuda y un DSCR mínimo de 1.24 veces cada año. Se toma la menor de las dos. <strong>La que manda es el DSCR</strong>: con ella, el proyecto solo puede pagar 172.8 millones de deuda, muy por debajo del 70%.”</p>
+</div>
+</div>
+<h4 class="unnumbered" id="transición-cambias-a-sources-uses">[1:30–1:35] Transición <em>[cambias a Sources &amp; Uses]</em></h4>
+<div class="duo">
+<div class="col-en">
 <p>“Let’s see how this translates into the construction funding plan.”</p>
-</blockquote>
-<p><strong>[1:35–2:15] Sources &amp; Uses: uses</strong> <em>[señala arriba, USES]</em></p>
-<blockquote>
+</div>
+<div class="col-es">
+<p>“Veamos cómo se traduce esto en el financiamiento de la construcción.”</p>
+</div>
+</div>
+<h4 class="unnumbered" id="sources-uses-los-usos-señala-arriba-uses">[1:35–2:15] Sources &amp; Uses: los usos <em>[señala arriba, USES]</em></h4>
+<div class="duo">
+<div class="col-en">
 <p>“This table answers two questions: how much money the project needs during construction, and who provides it.</p>
 <p>At the top are the uses. First, construction: US$130 million a year, US$390 million in total. Second, interest during construction. Debt is drawn at the start of each year, so interest accrues from day one, and it rises because we owe more each year: 3.2, 6.3 and 9.5 million, about 19 million in total. The sponsors pay this interest in cash; it is not added to the loan. So total uses are not 390, but US$409 million.”</p>
-</blockquote>
-<p><strong>[2:15–2:55] Sources</strong> <em>[señala abajo, SOURCES]</em></p>
-<blockquote>
+</div>
+<div class="col-es">
+<p>“Esta tabla responde dos preguntas: cuánta plata necesita el proyecto mientras se construye y quién la pone.</p>
+<p>Arriba están los usos. Primero, la obra: 130 millones por año, 390 en total. Segundo, los intereses durante la construcción. Como la deuda se desembolsa al inicio de cada año, los intereses corren desde el primer día, y suben porque cada año debemos más: 3.2, 6.3 y 9.5 millones, unos 19 en total. Esos intereses los pagan los sponsors en efectivo; no se suman a la deuda. Por eso el total no es 390, sino 409 millones.”</p>
+</div>
+</div>
+<h4 class="unnumbered" id="sources-uses-las-fuentes-señala-abajo-sources">[2:15–2:55] Sources &amp; Uses: las fuentes <em>[señala abajo, SOURCES]</em></h4>
+<div class="duo">
+<div class="col-en">
 <p>“At the bottom are the sources. The banks provide US$172.8 million, in three equal drawdowns of 57.6. This is not the 70% they allowed; it is what the project can actually repay at a 1.24 times DSCR.</p>
 <p>The remaining US$236 million comes from the sponsors as equity, split 40/60 between Italy-A and Italy-B. Equity rises slightly each year simply because interest rises.”</p>
-</blockquote>
-<p><strong>[2:55–3:20] Cierre</strong> <em>[mira al comité]</em></p>
-<blockquote>
+</div>
+<div class="col-es">
+<p>“Abajo están las fuentes. Los bancos ponen 172.8 millones, en tres partes iguales de 57.6. No es el 70% que permitían, sino lo que el proyecto realmente puede pagar con un DSCR de 1.24.</p>
+<p>El resto, unos 236 millones, lo ponen los sponsors como equity, 40% Italy-A y 60% Italy-B. El equity sube un poco cada año simplemente porque suben los intereses.”</p>
+</div>
+</div>
+<h4 class="unnumbered" id="cierre-mira-al-comité">[2:55–3:20] Cierre <em>[mira al comité]</em></h4>
+<div class="duo">
+<div class="col-en">
 <p>“The table balances every year. But <strong>the key message for the committee is this</strong>: debt is only 42% of total uses, because repayment capacity, not the 70% ceiling, is the binding constraint, and that is with favourable assumptions. My colleague will now show the operating model behind that capacity.”</p>
-</blockquote>
-<p><strong>Cómo decir los números:</strong> 390 → <em>three hundred ninety</em>; 409 → <em>four hundred nine</em>; 172.8 → <em>one seventy-two point eight</em>; 236 → <em>two thirty-six</em>; 57.6 → <em>fifty-seven point six</em>; 1.24 → <em>one point two four times</em>; 42% → <em>forty-two percent</em>. Ver la <a href="#cómo-decir-los-números-en-voz-alta">tabla completa</a>.</p>
-<h3 data-number="6.3" id="chuleta"><span class="header-section-number">6.3</span> Chuleta: de dónde sale cada número de tu slide</h3>
+</div>
+<div class="col-es">
+<p>“La tabla cuadra cada año. Pero <strong>el mensaje para el comité es este</strong>: la deuda es solo el 42% del total, porque lo que limita es la capacidad de pago y no el techo de 70%, y eso con supuestos que además son favorables. Ahora mi compañero les va a mostrar el modelo de operación detrás de esa capacidad.”</p>
+</div>
+</div>
+<h4 class="unnumbered" id="versión-corta-si-les-piden-recortar-2-minutos">Versión corta, si les piden recortar (≈2 minutos)</h4>
+<div class="duo">
+<div class="col-en">
+<p><strong>Key Assumptions (≈45 s):</strong> “Almost everything comes from the case. CAPEX is US$390 million over three years; revenue starts at 72 and costs at 50, so the margin is thin. The banks offer 5.5%, three equal drawdowns, three years of interest only and twelve of amortisation. They allow up to 70% debt but require a 1.24 times DSCR, and that is the binding constraint: the project can only repay US$172.8 million.”</p>
+<p><strong>Sources &amp; Uses (≈75 s):</strong> “During construction the project needs US$409 million: 390 for construction and 19 of interest, paid by the sponsors because there is no toll revenue yet. The banks provide 172.8, in three equal drawdowns, and the sponsors the rest, 236, split 40/60. The table balances every year, and debt is only 42% because repayment capacity, not the 70% ceiling, limits it.”</p>
+</div>
+<div class="col-es">
+<p><strong>Key Assumptions (≈45 s):</strong> “Casi todo viene del caso. La obra cuesta 390 millones en tres años; los peajes arrancan en 72 y los costos en 50, así que el margen es delgado. Los bancos dan 5.5%, tres desembolsos iguales, tres años solo de intereses y doce de amortización. Permiten hasta 70% de deuda, pero exigen un DSCR de 1.24, y eso es lo que manda: el proyecto solo puede pagar 172.8 millones.”</p>
+<p><strong>Sources &amp; Uses (≈75 s):</strong> “Durante la construcción se necesitan 409 millones: 390 de obra y 19 de intereses, que pagan los sponsors porque todavía no hay peajes. Los bancos ponen 172.8, en tres partes iguales, y los sponsors el resto, 236, en proporción 40/60. La tabla cuadra cada año, y la deuda es solo el 42% porque la limita la capacidad de pago, no el techo de 70%.”</p>
+</div>
+</div>
+<p><strong>Tips para que suene natural:</strong></p>
+<ul>
+<li><strong>Cronométrate</strong> dos veces. Si pasas de 3:30, recorta primero el bloque de impuestos y omisiones; eso lo puedes responder en las preguntas.</li>
+<li><strong>Pausa</strong> de un segundo antes de tus dos frases en negrita.</li>
+<li><strong>No leas la slide:</strong> di la idea y señala el número.</li>
+<li><strong>Cómo decir los números:</strong> 172.8 → <em>one seventy-two point eight</em>; 409 → <em>four hundred nine</em>; 236 → <em>two thirty-six</em>; 1.24 → <em>one point two four times</em>. Ver la <a href="#cómo-decir-los-números-en-voz-alta">tabla completa</a>.</li>
+<li>Si te interrumpen con una pregunta, responde corto y retoma con <em>“As I was saying…”</em> (“Como les decía…”).</li>
+</ul>
+<h3 data-number="6.2" id="chuleta"><span class="header-section-number">6.2</span> Chuleta: de dónde sale cada número de tu slide</h3>
 <div class="callout key">
 <p><strong>DSCR en una línea:</strong> caja del año para pagar deuda ÷ cuota del año (interés + capital). Los bancos exigen <strong>mínimo 1.24x</strong>: por cada US$1 de cuota, el proyecto debe tener US$1.24 de caja. Ese mínimo es el que fija cuánta deuda se puede tomar.</p>
 </div>
@@ -2106,7 +2157,7 @@ Deuda × (1 − 0.077) = 273   →   Deuda ≈ 295.8   ·   IDC ≈ 32.5   ·   
 </tbody>
 </table>
 <p><strong>Resumen para memorizar:</strong> <strong>datos</strong> = 390, 5.5%, tres partes iguales, 40/60, 70% máx., DSCR 1.24 mín. <strong>Cálculos</strong> = 172.79 de deuda (por DSCR), 57.60 por año (÷3), intereses (5.5% × saldo acumulado), 409.01 de usos y 236.22 de equity (el residuo).</p>
-<h3 data-number="6.4" id="tu-slide-en-inglés-vocabulario-y-pronunciación"><span class="header-section-number">6.4</span> Tu slide en inglés: vocabulario y pronunciación</h3>
+<h3 data-number="6.3" id="tu-slide-en-inglés-vocabulario-y-pronunciación"><span class="header-section-number">6.3</span> Tu slide en inglés: vocabulario y pronunciación</h3>
 <p>Tu slide es la <strong>10 del bloque en inglés</strong> (la <strong>25</strong> si presentan en español). Estos son los términos que vas a decir, cómo se dicen en inglés y cómo se pronuncian aproximadamente.</p>
 <table>
 <thead>
@@ -2264,7 +2315,7 @@ Deuda × (1 − 0.077) = 273   →   Deuda ≈ 295.8   ·   IDC ≈ 32.5   ·   
 </tr>
 </tbody>
 </table>
-<h3 data-number="6.5" id="cómo-decir-los-números-en-voz-alta"><span class="header-section-number">6.5</span> Cómo decir los números en voz alta</h3>
+<h3 data-number="6.4" id="cómo-decir-los-números-en-voz-alta"><span class="header-section-number">6.4</span> Cómo decir los números en voz alta</h3>
 <table>
 <thead>
 <tr>
@@ -2331,7 +2382,7 @@ Deuda × (1 − 0.077) = 273   →   Deuda ≈ 295.8   ·   IDC ≈ 32.5   ·   
 </tr>
 </tbody>
 </table>
-<h3 data-number="6.6" id="frases-para-conectar-y-para-responder-preguntas"><span class="header-section-number">6.6</span> Frases para conectar y para responder preguntas</h3>
+<h3 data-number="6.5" id="frases-para-conectar-y-para-responder-preguntas"><span class="header-section-number">6.5</span> Frases para conectar y para responder preguntas</h3>
 <table>
 <thead>
 <tr>
@@ -2378,23 +2429,7 @@ Deuda × (1 − 0.077) = 273   →   Deuda ≈ 295.8   ·   IDC ≈ 32.5   ·   
 </tr>
 </tbody>
 </table>
-<h3 data-number="6.7" id="versión-en-inglés-90120-segundos"><span class="header-section-number">6.7</span> Versión en inglés (90–120 segundos)</h3>
-<blockquote>
-<p>“This slide shows the construction-period funding plan. We separate <strong>uses</strong>, meaning every cash requirement of the project, from <strong>sources</strong>, meaning where that cash comes from.</p>
-<p>The base construction CAPEX is US$390m. The case spreads it evenly over three years, so the project needs US$130m in 2023, 2024 and 2025.</p>
-<p>The second use is <strong>interest during construction</strong>, or IDC. Debt is drawn in three equal tranches at the beginning of each construction year, and interest accrues immediately at 5.5%. Because the outstanding balance grows every year, IDC rises from US$3.17m to US$6.34m and US$9.50m, for a total of US$19.01m. IDC is paid in cash by equity, not capitalised, so total uses are US$409.01m, not only US$390m.</p>
-<p>On sources, senior debt is US$172.79m, or US$57.60m per year. This is not the 70% market ceiling; it is the amount the project can actually repay while keeping a 1.24x DSCR during operations. Sponsor equity is the residual: US$75.57m, US$78.74m and US$81.91m, for a total of US$236.22m, split 40/60 between Italy-A and Italy-B.</p>
-<p>The structure balances every year. The key credit message is that debt is only 42.25% of total uses because cash-flow capacity, not the leverage cap, is the binding constraint.”</p>
-</blockquote>
-<h3 data-number="6.8" id="versión-en-español"><span class="header-section-number">6.8</span> Versión en español</h3>
-<blockquote>
-<p>“Esta lámina muestra el plan de financiamiento durante construcción. Separamos los <strong>usos</strong>, es decir todos los requerimientos de caja, de las <strong>fuentes</strong>, que son los recursos que los cubren.</p>
-<p>El CAPEX base es US$390m, distribuido de manera uniforme: US$130m por año entre 2023 y 2025.</p>
-<p>El segundo uso es el <strong>interés durante construcción</strong> o IDC. La deuda se desembolsa en tres tramos iguales al inicio de cada año y devenga 5.5% desde el primer desembolso. Como el saldo crece, el IDC sube de US$3.17m a US$6.34m y a US$9.50m: US$19.01m en total. Lo paga el equity en efectivo y no se capitaliza, así que los usos totales son US$409.01m.</p>
-<p>La deuda senior es US$172.79m, US$57.60m por año. No es el 70% máximo del mercado: es lo que el flujo puede repagar manteniendo un DSCR de 1.24x. El equity cubre el residual, US$236.22m, repartido 40/60 entre Italy-A e Italy-B.</p>
-<p>La tabla cuadra cada año. El mensaje es que la capacidad de flujo, y no el techo de leverage, determina la deuda.”</p>
-</blockquote>
-<h3 data-number="6.9" id="números-que-debes-memorizar"><span class="header-section-number">6.9</span> Números que debes memorizar</h3>
+<h3 data-number="6.6" id="números-que-debes-memorizar"><span class="header-section-number">6.6</span> Números que debes memorizar</h3>
 <p><strong>390 · 19.01 · 409.01 · 172.79 · 236.22 · 42.25% · 1.24x · 1.81x · 1.52%</strong></p>
 <table>
 <thead>
@@ -2450,10 +2485,6 @@ Deuda × (1 − 0.077) = 273   →   Deuda ≈ 295.8   ·   IDC ≈ 32.5   ·   
 </tr>
 </tbody>
 </table>
-<h3 data-number="6.10" id="transición-al-siguiente-expositor"><span class="header-section-number">6.10</span> Transición al siguiente expositor</h3>
-<blockquote>
-<p>“The Sources &amp; Uses table tells us how much capital is required during construction. The next step is to test whether future operating cash flows can repay the US$172.79m debt while preserving lender coverage ratios.”</p>
-</blockquote>
 <hr />
 <h2 data-number="7" id="preguntas-tu-parte"><span class="header-section-number">7</span> Preguntas sobre tu parte [P1]</h2>
 <p>Las que más probablemente te harán a ti, con respuesta corta.</p>
