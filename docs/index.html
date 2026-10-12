@@ -3216,7 +3216,208 @@ Italy-B: debe poner US$141.73m, ≈<strong>2.7 veces sus activos totales</strong
 <blockquote>
 <p><strong>EN:</strong> <em>“The issue is the project’s economics, not the debt: even unlevered it only returns 2.60%, below the 5.5% cost of debt, so more debt would lower the sponsors’ return further. As it stands, the deal is unlikely to close on these terms. It needs better economics, such as tariff support or a minimum revenue guarantee, lower OPEX or new equity. Our role as lenders is to lend only what the project can repay: US$172.79m with conditions.”</em></p>
 </blockquote>
-<h3 data-number="10.5" id="q6-la-recomendación-al-comité"><span class="header-section-number">10.5</span> Q6: la recomendación al comité</h3>
+<h3 data-number="10.5" id="mejorar"><span class="header-section-number">10.5</span> Qué pedir para mejorar el DSCR y el proyecto (análisis con el modelo)</h3>
+<div class="callout key">
+<p><strong>La idea clave:</strong> hay dos tipos de palancas.</p>
+<ol type="1">
+<li><strong>Mejorar el negocio</strong> (más ingresos, menos OPEX, apoyo del Estado): sube el DSCR, la deuda posible <strong>y</strong> el retorno del sponsor.</li>
+<li><strong>Cambiar solo el financiamiento</strong> (más plazo, menos tasa): sube el DSCR o la deuda, pero <strong>casi no mejora, o empeora, el retorno del sponsor</strong>, porque la deuda (5.5%) cuesta más de lo que rinde el proyecto (2.60%).</li>
+</ol>
+<p><strong>El problema del proyecto es el negocio, no la deuda.</strong></p>
+</div>
+<p><strong>Simulaciones</strong> con el mismo modelo del caso, replicado y verificado (reproduce 172.79, 409.01, 1.52% y 2.60%). Se cambia <strong>una cosa a la vez</strong> (US$m):</p>
+<table>
+<thead>
+<tr>
+<th>Palanca</th>
+<th>Quién la mueve</th>
+<th style="text-align: right;">Deuda posible con DSCR 1.24x</th>
+<th style="text-align: right;">% deuda</th>
+<th style="text-align: right;">Equity</th>
+<th style="text-align: right;">IRR del sponsor</th>
+<th style="text-align: right;">DSCR si la deuda sigue en 172.79</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Caso base</strong></td>
+<td>—</td>
+<td style="text-align: right;">172.79</td>
+<td style="text-align: right;">42%</td>
+<td style="text-align: right;">236.2</td>
+<td style="text-align: right;"><strong>1.52%</strong></td>
+<td style="text-align: right;">1.24x</td>
+</tr>
+<tr>
+<td>Tarifa +10%</td>
+<td>Gobierno</td>
+<td style="text-align: right;">220.2</td>
+<td style="text-align: right;">53%</td>
+<td style="text-align: right;">194.1</td>
+<td style="text-align: right;">4.43%</td>
+<td style="text-align: right;">1.56x</td>
+</tr>
+<tr>
+<td>Tarifa +10% <strong>e indexación</strong> (ingresos crecen 3.5%)</td>
+<td>Gobierno</td>
+<td style="text-align: right;">244.9</td>
+<td style="text-align: right;">59%</td>
+<td style="text-align: right;">172.0</td>
+<td style="text-align: right;"><strong>7.11%</strong></td>
+<td style="text-align: right;">1.73x</td>
+</tr>
+<tr>
+<td>OPEX −10% (45 en vez de 50)</td>
+<td>Sponsors / operador</td>
+<td style="text-align: right;">205.8</td>
+<td style="text-align: right;">50%</td>
+<td style="text-align: right;">206.8</td>
+<td style="text-align: right;">3.51%</td>
+<td style="text-align: right;">1.47x</td>
+</tr>
+<tr>
+<td>Ingresos +10% <strong>y</strong> OPEX −10%</td>
+<td>Gobierno + sponsors</td>
+<td style="text-align: right;">250.4</td>
+<td style="text-align: right;">60%</td>
+<td style="text-align: right;">167.1</td>
+<td style="text-align: right;">6.48%</td>
+<td style="text-align: right;">1.76x</td>
+</tr>
+<tr>
+<td><strong>Subsidio</strong> del Estado = 20% del CAPEX (78)</td>
+<td>Gobierno</td>
+<td style="text-align: right;">172.79</td>
+<td style="text-align: right;">42%</td>
+<td style="text-align: right;"><strong>158.2</strong></td>
+<td style="text-align: right;">4.28%</td>
+<td style="text-align: right;">1.24x</td>
+</tr>
+<tr>
+<td>Tasa 4.5% (multilaterales o ECA)</td>
+<td>Bancos / DFI</td>
+<td style="text-align: right;">182.6</td>
+<td style="text-align: right;">45%</td>
+<td style="text-align: right;">223.9</td>
+<td style="text-align: right;">1.88%</td>
+<td style="text-align: right;">1.31x</td>
+</tr>
+<tr>
+<td>Plazo de 15 años (hasta 2040)</td>
+<td>Bancos</td>
+<td style="text-align: right;">208.2</td>
+<td style="text-align: right;">50%</td>
+<td style="text-align: right;">204.7</td>
+<td style="text-align: right;"><strong>0.78% ↓</strong></td>
+<td style="text-align: right;">1.49x</td>
+</tr>
+<tr>
+<td>Plazo de 18 años (hasta 2043)</td>
+<td>Bancos</td>
+<td style="text-align: right;">241.0</td>
+<td style="text-align: right;">58%</td>
+<td style="text-align: right;">175.5</td>
+<td style="text-align: right;"><strong>−0.63% ↓</strong></td>
+<td style="text-align: right;">1.72x</td>
+</tr>
+<tr>
+<td>Arrastre de pérdidas fiscales</td>
+<td>Gobierno (ley tributaria)</td>
+<td style="text-align: right;">176.5</td>
+<td style="text-align: right;">43%</td>
+<td style="text-align: right;">232.9</td>
+<td style="text-align: right;">1.65%</td>
+<td style="text-align: right;">1.27x</td>
+</tr>
+<tr>
+<td>DSCR exigido 1.35x (más holgura)</td>
+<td>Bancos</td>
+<td style="text-align: right;">158.5</td>
+<td style="text-align: right;">39%</td>
+<td style="text-align: right;">249.0</td>
+<td style="text-align: right;">1.66%</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Qué nos dicen los números:</strong></p>
+<ul>
+<li><strong>Lo que más mejora todo es la tarifa con indexación</strong>: el DSCR sube a 1.73x con la misma deuda y el IRR del sponsor pasa de 1.52% a 7.11%.</li>
+<li><strong>Bajar el OPEX también ayuda mucho</strong>: −10% de OPEX equivale casi a +10% de ingresos, porque el OPEX es muy alto (69% del ingreso).</li>
+<li><strong>Un subsidio del Estado no cambia la deuda, pero baja el equity</strong> de 236 a 158 y sube el IRR a 4.28%.</li>
+<li><strong>Alargar el plazo sube el DSCR y la deuda, pero baja el IRR del sponsor</strong> (0.78% y −0.63%): más deuda cara empeora el retorno. Sirve para darle holgura al banco, no para hacer atractivo el proyecto.</li>
+<li><strong>La tasa más baja ayuda poco</strong> (IRR 1.88%).</li>
+<li><em>Limitación:</em> son escenarios simples, una variable a la vez. Si se combinan varias palancas, la deuda posible podría superar el 70%, y ahí mandaría el techo de leverage.</li>
+</ul>
+<p><strong>¿Es 1.24x un DSCR bajo para una carretera con riesgo de tráfico?</strong> Para los estándares de mercado, sí:</p>
+<ul>
+<li>La guía de la FHWA (EE. UU.) indica que, por el riesgo de los ingresos por peaje, los bancos senior eligen un DSCR mínimo <strong>relativamente alto</strong>; su ejemplo usa <strong>2.0x</strong>.</li>
+<li>Carreteras con calificación de riesgo muestran mínimos de <strong>≈1.75x</strong> (WestConnex, Australia) y <strong>1.76x</strong> (I-10, EE. UU.).</li>
+</ul>
+<p>Por eso, como banco, tiene sentido pedir <strong>más holgura</strong> o <strong>apoyo del Estado</strong> antes de prestar más.</p>
+<h4 class="unnumbered" id="qué-pedir-y-a-quién">Qué pedir, y a quién</h4>
+<table>
+<thead>
+<tr>
+<th>A quién</th>
+<th>Qué pedir</th>
+<th>Precedente real</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gobierno</strong></td>
+<td><strong>Indexación de la tarifa</strong> a la inflación y fórmula de reajuste en el contrato.</td>
+<td>Práctica estándar en concesiones viales.</td>
+</tr>
+<tr>
+<td><strong>Gobierno</strong></td>
+<td><strong>Ingreso mínimo garantizado</strong> (<em>minimum revenue guarantee</em>): si el tráfico cae, el Estado completa un piso de ingresos.</td>
+<td><strong>Chile</strong>: el Estado garantizaba un ingreso mínimo que cubría hasta el <strong>70% de la inversión</strong> más la operación y el mantenimiento.</td>
+</tr>
+<tr>
+<td><strong>Gobierno</strong></td>
+<td><strong>Plazo variable</strong> de la concesión: dura hasta recaudar un monto fijo en valor presente (<em>LPVR</em>).</td>
+<td><strong>Chile</strong> (desde fines de los 90): reduce el riesgo de tráfico y evita renegociaciones.</td>
+</tr>
+<tr>
+<td><strong>Gobierno</strong></td>
+<td><strong>Cofinanciamiento o subsidio</strong> a la construcción, o <strong>pagos por disponibilidad</strong> para tramos caros como los túneles.</td>
+<td><strong>India</strong>: <em>viability gap funding</em> de hasta <strong>20%</strong> del costo de construcción. <strong>Perú</strong>: concesiones cofinanciadas (IIRSA Sur), donde el Estado paga PAO + PAMO menos lo que se recauda en peajes.</td>
+</tr>
+<tr>
+<td><strong>Gobierno</strong></td>
+<td><strong>Estabilidad tributaria</strong> y permitir el <strong>arrastre de pérdidas</strong>.</td>
+<td>Convenios de estabilidad jurídica.</td>
+</tr>
+<tr>
+<td><strong>Sponsors</strong></td>
+<td><strong>Bajar el OPEX</strong>: operador con experiencia, contrato de O&amp;M con tope y revisión del presupuesto por el Independent Engineer.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Sponsors</strong></td>
+<td><strong>Nuevo socio</strong> o más participación de Italy-A; <strong>equity LC</strong>; equity aportado primero.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Bancos / multilaterales</strong></td>
+<td><strong>Deuda más barata y más larga</strong> de IFC, IDB Invest, CAF o ECA (SACE), <strong>solo con protecciones</strong> (cash sweep, DSRA).</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Bancos / multilaterales</strong></td>
+<td><strong>Garantías MIGA</strong> contra riesgo político.</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nuestra recomendación como banco:</strong> prestar <strong>US$172.79m con condiciones</strong> hoy. Si el Gobierno da <strong>indexación y un ingreso mínimo garantizado (o un subsidio)</strong> y los sponsors <strong>bajan el OPEX o traen un socio</strong>, el proyecto mejora para todos: más DSCR para el banco y más retorno para los sponsors. Recién entonces se podría revisar el monto de la deuda.</p>
+<blockquote>
+<p><strong>EN:</strong> <em>“To improve the DSCR and the project, the fix must come from the economics, not the financing. Tariff indexation, a minimum revenue guarantee or a construction subsidy from the government, plus lower OPEX or a new equity partner, would raise both coverage and sponsor returns. Longer tenors raise debt capacity but actually lower the sponsors’ return, because debt at 5.5% costs more than the project’s 2.6% return. Chile’s minimum income guarantees and India’s viability gap funding are precedents.”</em></p>
+</blockquote>
+<p><strong>Fuentes:</strong> <a href="https://ppp.worldbank.org/public-private-partnership/sites/default/files/2024-08/Traffic0Risk0Mitigation0Vassallo.pdf">World Bank – Traffic risk mitigation in highway concessions: the experience of Chile (Vassallo)</a> · <a href="https://ppiaf.org/sites/ppiaf.org/files/documents/toolkits/highwaystoolkit-russian/6/pdf-version/chile.pdf">PPIAF – Toolkit de carreteras, caso Chile</a> · <a href="https://blogs.worldbank.org/en/psd/examples-of-chile-s-innovative-approach-to-ppps">World Bank blog – Chile’s innovative approach to PPPs</a> · <a href="https://cri-world.com/publications/qed_dp_288.pdf">Kayhan y Jenkins – garantías de tráfico mínimo y VGF en India</a> · <a href="https://ppp-certification.com/node/2298">PPP Certification Guide – apoyo público a carreteras</a> · <a href="https://www.fhwa.dot.gov/ipd/p3/toolkit/publications/other_guides/financing_of_highway_p3_projects/ch_5.aspx">FHWA – Financing of highway P3 projects, cap. 5</a> · <a href="https://www.spglobal.com/ratings/en/research/articles/210330-research-update-westconnex-finance-co-pty-ltd-s-notes-issue-assigned-bbb-rating-outlook-stable-11893027">S&amp;P – WestConnex</a> · <a href="https://dbrs.morningstar.com/research/434997/morningstar-dbrs-confirms-credit-rating-of-bbb-low-with-a-stable-trend-on-san-bernardino-county-transportation-authority-i-10-express-lanes-project">Morningstar DBRS – I-10 Express Lanes</a> · <a href="https://www.ositran.gob.pe/anterior/wp-content/uploads/2020/07/ficha-contrato-iirsa-sur-t5-2019.pdf">Ositran – IIRSA Sur Tramo 5 (PAO/PAMO)</a></p>
+<h3 data-number="10.6" id="q6-la-recomendación-al-comité"><span class="header-section-number">10.6</span> Q6: la recomendación al comité</h3>
 <p><strong>No a 70:30. Sí a una aprobación condicionada</strong> con US$172.79m de deuda y estas condiciones:</p>
 <ol type="1">
 <li>Equity comprometido antes de cada desembolso, respaldado por Italy-A, una equity LC o un nuevo socio.</li>
