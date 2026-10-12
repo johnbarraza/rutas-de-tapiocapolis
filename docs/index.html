@@ -976,13 +976,49 @@ Risk    →  cash-flow impact (CFADS)            →  contractual or financial m
 <pre class="text"><code>Datos del caso (costo, ingresos, costos, tasa, plazo, impuestos, 70:30, 1.24x)
    + definiciones nuestras (CFADS, sculpting, IDC pagado por equity)
    → la deuda la decide el DSCR: US$172.79m, no el 70%</code></pre>
-<h3 data-number="3.4" id="tres-aclaraciones-para-decir-en-voz-alta"><span class="header-section-number">3.4</span> Tres aclaraciones para decir en voz alta</h3>
+<h3 data-number="3.4" id="las-dos-líneas-que-más-te-pueden-preguntar"><span class="header-section-number">3.4</span> Las dos líneas que más te pueden preguntar</h3>
+<h4 class="unnumbered" id="idc-is-funded-by-equity-and-is-not-capitalised">“IDC is funded by equity and is not capitalised”</h4>
+<ul>
+<li><strong>Qué significa:</strong> los intereses de la construcción (US$19.01m) los pagan <strong>los sponsors en efectivo</strong>, cada año, y <strong>no se suman a la deuda</strong>.</li>
+<li><strong>Por qué:</strong> el caso dice <em>“only interest payments”</em> durante la construcción (se pagan, no se acumulan); el SPV no tiene ingresos hasta 2026; y la deuda ya está topada en 172.79 por el DSCR.</li>
+<li><strong>Qué implica:</strong> usos de 409.01 (no 390), equity de 236.22 que sube cada año y deuda de exactamente 172.79 al terminar la obra.</li>
+<li><strong>Por qué no otra opción:</strong> capitalizar contradice el caso; pagarlo con deuda da el mismo equity. Ver la explicación completa en <a href="#idc-equity">qué significa “IDC is funded by equity”</a>.</li>
+</ul>
+<blockquote>
+<p><strong>EN:</strong> <em>“IDC is paid in cash by the sponsors and not added to the loan, because the case says only interest payments during construction and the project has no revenue yet.”</em></p>
+</blockquote>
+<h4 class="unnumbered" id="no-wc-contingency">“No working capital or contingency”</h4>
+<ul>
+<li><strong>Qué significa:</strong>
+<ul>
+<li><strong>Capital de trabajo</strong> (EN: <em>working capital</em>): caja inmovilizada en la operación diaria (cuentas por cobrar, inventarios, caja mínima).</li>
+<li><strong>Contingencia</strong> (EN: <em>contingency</em>): un colchón en el presupuesto de obra para sobrecostos, normalmente 5–10% del CAPEX.</li>
+</ul></li>
+<li><strong>Por qué no los incluimos:</strong>
+<ol type="1">
+<li><strong>El caso no da ninguna cifra</strong> para ninguno de los dos. La slide lo dice: <em>“Only stated case assumptions and declared modelling criteria are included.”</em> Poner un número sería inventarlo.</li>
+<li><strong>Capital de trabajo:</strong> en una carretera de peaje es pequeño, porque los peajes se cobran al contado (no hay cuentas por cobrar relevantes) y no hay inventarios. Su efecto sería mínimo.</li>
+<li><strong>Contingencia:</strong> el caso presenta US$390m como el <em>“total project estimated cost”</em> con un <strong>EPC a precio fijo y llave en mano</strong>, que en teoría traslada los sobrecostos al contratista.</li>
+<li><strong>Las reservas (DSRA y MMRA)</strong> son otra cosa: esas sí las excluye el caso expresamente (<em>“assume no reserve accounts”</em>).</li>
+</ol></li>
+<li><strong>Qué implica:</strong> el caso base es <strong>favorable</strong> (optimista). Si se incluyeran:
+<ul>
+<li>Una contingencia de 5–10% agregaría <strong>US$19.5–39m</strong> a los usos y, como la deuda está topada, <strong>todo lo pondría el equity</strong> (≈255.7–275.2).</li>
+<li>El capital de trabajo reduciría un poco el CFADS y la deuda.</li>
+</ul></li>
+<li><strong>Por qué no otra opción (incluirlos con un % supuesto):</strong> sería un número arbitrario que el caso no respalda y haría el modelo menos comparable. Preferimos <strong>modelar lo que dice el caso y declarar la omisión</strong>.</li>
+<li><strong>Pero lo reconocemos como debilidad:</strong> el EPC es de una filial del sponsor (Sub A), hay dos túneles de 10 km y reasentamiento de 1,000 familias, así que el precio fijo no cubre todo. Por eso pedimos <strong>contingencia y standby equity (o una equity LC) como condición de crédito</strong>. Ver <a href="#si-incluyeramos">qué pasaría si los incluyéramos</a>.</li>
+</ul>
+<blockquote>
+<p><strong>EN:</strong> <em>“The case gives no figures for working capital or contingency, so we don’t invent them. Working capital is small for a toll road, since tolls are collected in cash, and the US$390m is a fixed-price turnkey cost. Still, with tunnels and resettlement, we require a contingency and standby equity as a credit condition.”</em></p>
+</blockquote>
+<h3 data-number="3.5" id="tres-aclaraciones-para-decir-en-voz-alta"><span class="header-section-number">3.5</span> Tres aclaraciones para decir en voz alta</h3>
 <ol type="1">
 <li>Los desembolsos son <strong>al inicio de cada año de construcción</strong>: <em>“three equal drawdowns <strong>at the start of each construction year</strong>”</em>. Por eso el IDC es de año completo.</li>
 <li>El bloque “Modelling Assumptions” incluye el impuesto y la depreciación, pero <strong>son datos del caso</strong>. Si lo cuestionan: <em>“Tax and depreciation are case data; our own modelling choices are the CFADS definition, the sculpting and cash-paid IDC.”</em></li>
 <li>El 70:30 es un <strong>techo</strong>: <em>“70:30 is a ceiling; our actual debt is 42.25% of total uses.”</em></li>
 </ol>
-<h3 data-number="3.5" id="supuestos-que-no-están-en-la-slide-pero-te-pueden-preguntar"><span class="header-section-number">3.5</span> Supuestos que no están en la slide, pero te pueden preguntar</h3>
+<h3 data-number="3.6" id="supuestos-que-no-están-en-la-slide-pero-te-pueden-preguntar"><span class="header-section-number">3.6</span> Supuestos que no están en la slide, pero te pueden preguntar</h3>
 <table>
 <thead>
 <tr>
@@ -1009,7 +1045,7 @@ Risk    →  cash-flow impact (CFADS)            →  contractual or financial m
 </tr>
 </tbody>
 </table>
-<h3 data-number="3.6" id="guion-de-la-slide-9-6090-segundos"><span class="header-section-number">3.6</span> Guion de la slide 9 (60–90 segundos)</h3>
+<h3 data-number="3.7" id="guion-de-la-slide-9-6090-segundos"><span class="header-section-number">3.7</span> Guion de la slide 9 (60–90 segundos)</h3>
 <blockquote>
 <p>“This slide summarises the assumptions behind our model. We only use data stated in the case, plus a few modelling criteria that we declare explicitly.</p>
 <p>First, construction and operations. CAPEX is US$390m, spread evenly over three years. Toll revenue starts at US$72m and grows 2.5% a year, while operating costs start at US$50m and grow 2.3%. That leaves a thin margin: EBITDA is only US$22m in the first year.</p>
@@ -1023,7 +1059,7 @@ Risk    →  cash-flow impact (CFADS)            →  contractual or financial m
 <blockquote>
 <p>“Esta lámina resume los supuestos del modelo: solo usamos datos del caso y unos pocos criterios propios que declaramos. El CAPEX es US$390m en tres años; los ingresos parten en US$72m y crecen 2.5%, y los costos parten en US$50m y crecen 2.3%, así que el margen es delgado. La deuda paga 5.5%, se desembolsa en tres partes iguales al inicio de cada año, tiene tres años de solo intereses y doce de amortización. El impuesto es 30% desde la operación, con depreciación lineal a 20 años, y no hay reservas por instrucción del caso. Los bancos permiten hasta 70% de deuda, pero exigen un DSCR mínimo de 1.24x: con ese límite, el proyecto solo soporta US$172.79m. El IDC lo paga el equity.”</p>
 </blockquote>
-<h3 data-number="3.7" id="preguntas-probables-sobre-key-assumptions"><span class="header-section-number">3.7</span> Preguntas probables sobre Key Assumptions</h3>
+<h3 data-number="3.8" id="preguntas-probables-sobre-key-assumptions"><span class="header-section-number">3.8</span> Preguntas probables sobre Key Assumptions</h3>
 <p><strong>¿Cuáles son datos del caso y cuáles son supuestos de ustedes?</strong> (<span class="en">Which are case data and which are your assumptions?</span>)<br />
 Del caso: CAPEX, ingresos, OPEX, tasa, desembolsos, plazo, impuesto, depreciación, 70:30 y 1.24x. Nuestros: la definición del CFADS, el sculpting, el IDC pagado por equity, y no incluir capital de trabajo ni contingencia.</p>
 <blockquote>
@@ -1365,49 +1401,68 @@ Sí, y lo reconocemos. Es la instrucción del caso; por eso las pedimos como con
 </tr>
 </tbody>
 </table>
-<p><strong>¿Y si se capitalizara?</strong> La deuda al final de la obra igual tendría que ser 172.79 (lo que permite el DSCR). Pero ese saldo incluiría intereses acumulados, así que los bancos darían <strong>menos efectivo</strong> para la obra:</p>
+<p><strong>¿Por qué esta opción y no otra? Las tres formas posibles de tratar el IDC:</strong></p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th style="text-align: right;">IDC pagado por equity (nuestro caso)</th>
-<th style="text-align: right;">IDC capitalizado (alternativa)</th>
+<th style="text-align: right;"><strong>A. Pagado en efectivo por equity</strong> (lo nuestro)</th>
+<th style="text-align: right;">B. Pagado en efectivo con la misma deuda</th>
+<th style="text-align: right;">C. Capitalizado (se suma a la deuda)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Desembolso anual en efectivo</td>
-<td style="text-align: right;">57.60</td>
-<td style="text-align: right;">≈51.70</td>
+<td>Qué pasa</td>
+<td style="text-align: right;">Los sponsors pagan los intereses cada año</td>
+<td style="text-align: right;">Parte de los desembolsos del banco se usa para pagar intereses</td>
+<td style="text-align: right;">Los intereses no se pagan: se agregan al saldo</td>
 </tr>
 <tr>
-<td>Efectivo de deuda para la obra</td>
+<td>¿Respeta <em>“only interest payments”</em>?</td>
+<td style="text-align: right;"><strong>Sí</strong></td>
+<td style="text-align: right;">Sí</td>
+<td style="text-align: right;"><strong>No</strong> (no se pagan)</td>
+</tr>
+<tr>
+<td>Deuda para la obra</td>
 <td style="text-align: right;">172.79</td>
+<td style="text-align: right;">≈153.78</td>
 <td style="text-align: right;">≈155.10</td>
-</tr>
-<tr>
-<td>Intereses de construcción</td>
-<td style="text-align: right;">19.01 (pagados por equity)</td>
-<td style="text-align: right;">≈17.69 (acumulados en la deuda)</td>
 </tr>
 <tr>
 <td>Saldo de deuda a fines de 2025</td>
 <td style="text-align: right;">172.79</td>
 <td style="text-align: right;">172.79</td>
+<td style="text-align: right;">172.79</td>
 </tr>
 <tr>
-<td>Equity de los sponsors</td>
+<td>Intereses de construcción</td>
+<td style="text-align: right;">19.01</td>
+<td style="text-align: right;">19.01</td>
+<td style="text-align: right;">≈17.69</td>
+</tr>
+<tr>
+<td><strong>Equity total</strong></td>
 <td style="text-align: right;"><strong>236.22</strong></td>
+<td style="text-align: right;"><strong>236.22</strong> (igual)</td>
 <td style="text-align: right;"><strong>≈234.90</strong></td>
 </tr>
 <tr>
 <td>Usos totales</td>
 <td style="text-align: right;">409.01</td>
+<td style="text-align: right;">409.01</td>
 <td style="text-align: right;">≈407.69</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Conclusión:</strong> el equity queda <strong>casi igual</strong> en ambos casos (diferencia ≈1.3). Lo que cambia es cuánta deuda se usa para la obra y cuánta para intereses. Usamos el pago en efectivo porque es lo que dice el caso (<em>“only interest payments”</em>).</p>
+<p><strong>El razonamiento:</strong></p>
+<ol type="1">
+<li><strong>C queda descartada</strong> porque contradice el caso: si los intereses se capitalizan, no hay <em>“interest payments”</em>.</li>
+<li><strong>A y B dan exactamente el mismo equity</strong> (236.22): la deuda está topada en 172.79 por el DSCR, así que da igual a qué se destine; lo que no cubre la deuda lo cubre el equity. La diferencia es solo de presentación.</li>
+<li><strong>Elegimos A</strong> porque es <strong>más claro y más prudente</strong> para el banco: muestra el IDC como un uso que fondean los sponsors, deja todo el préstamo para la obra y es la convención del <strong>ejercicio resuelto en clase</strong>.</li>
+<li>En cualquiera de las tres, el saldo al terminar la obra es <strong>172.79</strong>, porque eso es lo que la caja futura puede pagar.</li>
+</ol>
 <blockquote>
 <p><strong>EN:</strong> <em>“IDC is the interest on the loan during construction, US$19.01m. Since the project has no revenue yet, the sponsors pay it in cash with equity, and it is not added to the loan balance. The case says only interest payments during construction, so the debt at completion is exactly the US$172.79m drawn.”</em></p>
 </blockquote>
