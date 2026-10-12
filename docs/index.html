@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Guía de exposición — Rutas de Tapiocapolis</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="Guia_Exposicion.css" />
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const labels = {
+      '[CASE DATA]': 'data',
+      '[MODELLING ASSUMPTION]': 'assumption',
+      '[MODEL OUTPUT]': 'output',
+      '[CREDIT RECOMMENDATION]': 'recommendation'
+    };
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+      let html = node.nodeValue;
+      let changed = false;
+      Object.entries(labels).forEach(([label, css]) => {
+        if (html.includes(label)) {
+          html = html.split(label).join(`<span class="badge ${css}">${label.slice(1,-1)}</span>`);
+          changed = true;
+        }
+      });
+      if (changed) {
+        const wrapper = document.createElement('span');
+        wrapper.innerHTML = html;
+        node.parentNode.replaceChild(wrapper, node);
+      }
+    });
+  });
+  </script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Guía de exposición — Rutas de Tapiocapolis</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#guía-de-exposición-rutas-de-tapiocapolis"
+id="toc-guía-de-exposición-rutas-de-tapiocapolis">Guía de exposición —
+Rutas de Tapiocapolis</a>
+<ul>
+<li><a href="#mensaje-central-para-todo-el-equipo"
+id="toc-mensaje-central-para-todo-el-equipo">1. Mensaje central para
+todo el equipo</a>
+<ul>
+<li><a href="#cómo-clasificar-una-cifra-antes-de-responder"
+id="toc-cómo-clasificar-una-cifra-antes-de-responder">Cómo clasificar
+una cifra antes de responder</a></li>
+<li><a href="#mapa-de-conceptos-de-qué-parte-sale-cada-resultado"
+id="toc-mapa-de-conceptos-de-qué-parte-sale-cada-resultado">Mapa de
+conceptos: de qué parte sale cada resultado</a></li>
+<li><a href="#ruta-de-lectura-por-concepto"
+id="toc-ruta-de-lectura-por-concepto">Ruta de lectura por
+concepto</a></li>
+<li><a href="#resumen-ejecutivo-general"
+id="toc-resumen-ejecutivo-general">Resumen ejecutivo — todo el
+caso</a></li>
+<li><a href="#resumen-ejecutivo-tu-parte"
+id="toc-resumen-ejecutivo-tu-parte">Resumen ejecutivo — tu parte:
+Sources &amp; Uses</a></li>
+<li><a href="#navegación-rápida" id="toc-navegación-rápida">Navegación
+rápida</a></li>
+</ul></li>
+<li><a href="#tu-parte-question-3-sources-uses"
+id="toc-tu-parte-question-3-sources-uses">2. Tu parte — Question 3:
+Sources &amp; Uses</a>
+<ul>
+<li><a href="#objetivo-de-tu-intervención"
+id="toc-objetivo-de-tu-intervención">Objetivo de tu
+intervención</a></li>
+<li><a href="#qué-papel-tenemos-nosotros-y-quién-entrega-cada-fuente"
+id="toc-qué-papel-tenemos-nosotros-y-quién-entrega-cada-fuente">¿Qué
+papel tenemos nosotros y quién entrega cada fuente?</a></li>
+<li><a href="#por-qué-cada-cifra-de-la-tabla-tiene-ese-valor"
+id="toc-por-qué-cada-cifra-de-la-tabla-tiene-ese-valor">Por qué cada
+cifra de la tabla tiene ese valor</a></li>
+<li><a href="#guion-de-90120-segundos"
+id="toc-guion-de-90120-segundos">Guion de 90–120 segundos</a></li>
+<li><a href="#si-la-exposición-será-en-español"
+id="toc-si-la-exposición-será-en-español">Si la exposición será en
+español</a></li>
+<li><a href="#números-que-debes-memorizar"
+id="toc-números-que-debes-memorizar">Números que debes
+memorizar</a></li>
+<li><a href="#fórmulas-simples-que-puedes-explicar"
+id="toc-fórmulas-simples-que-puedes-explicar">Fórmulas simples que
+puedes explicar</a></li>
+<li><a href="#la-intuición-detrás-de-cada-número"
+id="toc-la-intuición-detrás-de-cada-número">La intuición detrás de cada
+número</a></li>
+<li><a href="#diferencia-clave-us19.01m-vs.-us32.5m-de-idc"
+id="toc-diferencia-clave-us19.01m-vs.-us32.5m-de-idc">Diferencia clave:
+US$19.01m vs. ~US$32.5m de IDC</a></li>
+<li><a href="#transición-al-siguiente-expositor"
+id="toc-transición-al-siguiente-expositor">Transición al siguiente
+expositor</a></li>
+</ul></li>
+<li><a href="#glosario-término-significado-e-implicación"
+id="toc-glosario-término-significado-e-implicación">3. Glosario:
+término, significado e implicación</a>
+<ul>
+<li><a href="#definiciones-de-cobertura"
+id="toc-definiciones-de-cobertura">Definiciones de cobertura</a></li>
+<li><a href="#tasa-hedge-y-moneda" id="toc-tasa-hedge-y-moneda">Tasa,
+hedge y moneda</a></li>
+<li><a href="#glosario-general" id="toc-glosario-general">Glosario
+general</a></li>
+</ul></li>
+<li><a href="#preguntas-probables-para-tu-parte-y-respuestas-cortas"
+id="toc-preguntas-probables-para-tu-parte-y-respuestas-cortas">4.
+Preguntas probables para tu parte y respuestas cortas</a>
+<ul>
+<li><a href="#por-qué-no-usan-70-de-deuda-si-el-banco-lo-permite"
+id="toc-por-qué-no-usan-70-de-deuda-si-el-banco-lo-permite">¿Por qué no
+usan 70% de deuda si el banco lo permite?</a></li>
+<li><a href="#por-qué-el-equity-no-es-igual-cada-año"
+id="toc-por-qué-el-equity-no-es-igual-cada-año">¿Por qué el equity no es
+igual cada año?</a></li>
+<li><a href="#por-qué-idc-está-en-uses-si-lo-paga-equity"
+id="toc-por-qué-idc-está-en-uses-si-lo-paga-equity">¿Por qué IDC está en
+Uses si lo paga equity?</a></li>
+<li><a href="#por-qué-el-idc-no-se-capitaliza"
+id="toc-por-qué-el-idc-no-se-capitaliza">¿Por qué el IDC no se
+capitaliza?</a></li>
+<li><a href="#qué-pasaría-si-el-capex-sube-us10m"
+id="toc-qué-pasaría-si-el-capex-sube-us10m">¿Qué pasaría si el CAPEX
+sube US$10m?</a></li>
+<li><a href="#por-qué-no-hay-contingencia-en-la-tabla"
+id="toc-por-qué-no-hay-contingencia-en-la-tabla">¿Por qué no hay
+contingencia en la tabla?</a></li>
+<li><a href="#qué-sponsor-cubre-el-equity"
+id="toc-qué-sponsor-cubre-el-equity">¿Qué sponsor cubre el
+equity?</a></li>
+<li><a href="#la-tabla-ya-considera-dsra-mmra-o-working-capital"
+id="toc-la-tabla-ya-considera-dsra-mmra-o-working-capital">¿La tabla ya
+considera DSRA, MMRA o working capital?</a></li>
+</ul></li>
+<li><a href="#preguntas-probables-al-equipo"
+id="toc-preguntas-probables-al-equipo">5. Preguntas probables al
+equipo</a></li>
+<li><a href="#mini-ensayo-oral-preguntas-rápidas"
+id="toc-mini-ensayo-oral-preguntas-rápidas">6. Mini ensayo oral:
+preguntas rápidas</a></li>
+<li><a href="#frases-útiles-para-sonar-preciso"
+id="toc-frases-útiles-para-sonar-preciso">7. Frases útiles para sonar
+preciso</a></li>
+<li><a href="#mapa-slides" id="toc-mapa-slides">8. Mapa de slides: qué
+decir, quién debería hablar y qué ajustar</a>
+<ul>
+<li><a
+href="#si-presentan-el-archivo-presentacion_final_rutas_de_tapiocapolis_language_review_mckinsey.pptx"
+id="toc-si-presentan-el-archivo-presentacion_final_rutas_de_tapiocapolis_language_review_mckinsey.pptx">Si
+presentan el archivo
+<code>Presentacion_Final_Rutas_de_Tapiocapolis_Language_Review_McKinsey.pptx</code></a></li>
+<li><a href="#lo-que-tú-deberías-decir-exactamente-en-tu-bloque"
+id="toc-lo-que-tú-deberías-decir-exactamente-en-tu-bloque">Lo que tú
+deberías decir exactamente en tu bloque</a></li>
+<li><a href="#ajustes-recomendados-antes-de-presentar"
+id="toc-ajustes-recomendados-antes-de-presentar">Ajustes recomendados
+antes de presentar</a></li>
+<li><a href="#jerarquía-de-fuentes-cuando-encuentres-una-cifra-distinta"
+id="toc-jerarquía-de-fuentes-cuando-encuentres-una-cifra-distinta">Jerarquía
+de fuentes cuando encuentres una cifra distinta</a></li>
+<li><a href="#revision-excel-respuesta"
+id="toc-revision-excel-respuesta">Revisión del Excel y respuesta
+escrita</a></li>
+</ul></li>
+<li><a href="#adversarial" id="toc-adversarial">9. Revisión adversarial
+de cada cifra y supuesto material</a></li>
+<li><a href="#devils-advocate-interrogatorio-de-profesor-o-comité"
+id="toc-devils-advocate-interrogatorio-de-profesor-o-comité">10. Devil’s
+advocate: interrogatorio de profesor o comité</a>
+<ul>
+<li><a
+href="#nivel-1-como-si-tuvieras-que-explicarlo-a-alguien-de-cinco-años"
+id="toc-nivel-1-como-si-tuvieras-que-explicarlo-a-alguien-de-cinco-años">Nivel
+1 — como si tuvieras que explicarlo a alguien de cinco años</a></li>
+<li><a href="#nivel-2-profesor-técnico"
+id="toc-nivel-2-profesor-técnico">Nivel 2 — profesor técnico</a></li>
+<li><a href="#nivel-3-comité-de-crédito"
+id="toc-nivel-3-comité-de-crédito">Nivel 3 — comité de crédito</a></li>
+</ul></li>
+<li><a href="#simulación-de-3-minutos-para-entrenar-solo"
+id="toc-simulación-de-3-minutos-para-entrenar-solo">11. Simulación de 3
+minutos para entrenar solo</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="guía-de-exposición-rutas-de-tapiocapolis">Guía de exposición —
+Rutas de Tapiocapolis</h1>
+<h2 id="mensaje-central-para-todo-el-equipo">1. Mensaje central para
+todo el equipo</h2>
+<p><strong>El proyecto es estratégico, pero no soporta la estructura
+máxima de 70:30.</strong> El límite de 70% de deuda es un techo de
+mercado, no una obligación. Al dimensionar la deuda con el flujo
+disponible y un DSCR mínimo de 1.24x, la deuda sostenible es
+<strong>US$172.79m</strong>, equivalente a <strong>42.2% de los usos
+totales</strong>. La recomendación es aprobación condicionada a más
+protecciones de liquidez, soporte de sponsors y mitigantes
+contractuales.</p>
+<p>Usen esta lógica en casi todas las respuestas: <strong>riesgo →
+impacto en flujo → protección contractual/financiera → decisión de
+crédito</strong>.</p>
+<h3 id="cómo-clasificar-una-cifra-antes-de-responder">Cómo clasificar
+una cifra antes de responder</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Etiqueta</th>
+<th>Qué significa</th>
+<th>Ejemplos del caso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>[CASE DATA]</strong></td>
+<td>Hecho entregado por el caso. No lo inventamos ni lo
+recalculamos.</td>
+<td>US$390m CAPEX, 3 años de construcción, 23 años de concesión, 5.5%,
+1.24x mínimo DSCR, 40%/60% ownership.</td>
+</tr>
+<tr>
+<td><strong>[MODELLING ASSUMPTION]</strong></td>
+<td>Convención necesaria para modelar porque el caso no da el detalle
+completo. Debe declararse.</td>
+<td>IDC pagado por equity, cálculo anual con draw al inicio de año,
+CFADS = EBITDA − taxes, sin working capital/maintenance
+CAPEX/reserves.</td>
+</tr>
+<tr>
+<td><strong>[MODEL OUTPUT]</strong></td>
+<td>Resultado que surge de fórmulas y supuestos.</td>
+<td>US$172.79m debt, US$19.01m IDC, US$409.01m total uses, 1.52% equity
+IRR.</td>
+</tr>
+<tr>
+<td><strong>[CREDIT RECOMMENDATION]</strong></td>
+<td>Lo que proponemos para que la estructura sea financiable. No es un
+supuesto del Excel.</td>
+<td>DSRA, MMRA, contingency, equity LC, cash sweep, dividend lock-up,
+step-in rights.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mapa-de-conceptos-de-qué-parte-sale-cada-resultado">Mapa de
+conceptos: de qué parte sale cada resultado</h3>
+<pre class="text"><code>[CASE DATA] CAPEX, schedule, tariffs/revenue, OPEX, taxes, lender terms
+        ↓
+[MODELLING ASSUMPTIONS] IDC cash-paid by equity, annual timing, CFADS definition
+        ↓
+[MODEL OUTPUTS] Sources &amp; Uses → CFADS → sculpted debt → DSCR/LLCR/PLCR → IRR
+        ↓
+[CREDIT RECOMMENDATION] conditional approval + protections omitted from the base case</code></pre>
+<h3 id="ruta-de-lectura-por-concepto">Ruta de lectura por concepto</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Si necesitas preparar…</th>
+<th>Lee primero</th>
+<th>Qué debes poder explicar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tu parte: Question 3</strong></td>
+<td>Sección 2, después 8 y 9</td>
+<td>De dónde salen CAPEX, IDC, deuda y equity; y por qué cada cifra es
+dato, supuesto o resultado.</td>
+</tr>
+<tr>
+<td><strong>Las preguntas técnicas del modelo</strong></td>
+<td>Secciones 3, 5, 9 y 10</td>
+<td>Cómo se forman CFADS, DSCR, LLCR, PLCR e IRR; y qué cambia cuando el
+supuesto cambia.</td>
+</tr>
+<tr>
+<td><strong>La discusión completa del equipo</strong></td>
+<td>Secciones 1, 6, 8 y 10</td>
+<td>La cadena riesgo → flujo → mitigante → decisión de crédito.</td>
+</tr>
+<tr>
+<td><strong>Una respuesta rápida ante una cifra</strong></td>
+<td>Sección 9 y la jerarquía de fuentes de la sección 8</td>
+<td>Su fuente, fórmula, supuesto implícito e impacto si se mueve.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Regla de respuesta:</strong> antes de dar una cifra, di
+mentalmente su etiqueta. Por ejemplo: “US$390m is <strong>case
+data</strong>; US$19.01m IDC is a <strong>model output</strong>, driven
+by the annual-draw and cash-paid IDC <strong>modelling
+assumptions</strong>.”</p>
+<h3 id="resumen-ejecutivo-general">Resumen ejecutivo — todo el caso</h3>
+<p>Rutas de Tapiocapolis es una concesión vial de 23 años con un costo
+de construcción de **US<span
+class="math inline">390<em>m</em> * *.<em>T</em><em>i</em><em>e</em><em>n</em><em>e</em><em>e</em><em>l</em><em>e</em><em>m</em><em>e</em><em>n</em><em>t</em><em>o</em><em>s</em><em>f</em><em>a</em><em>v</em><em>o</em><em>r</em><em>a</em><em>b</em><em>l</em><em>e</em><em>s</em> : <em>p</em><em>a</em><em>í</em><em>s</em><em>e</em><em>s</em><em>t</em><em>a</em><em>b</em><em>l</em><em>e</em>, <em>E</em><em>P</em><em>C</em><em>f</em><em>i</em><em>x</em><em>e</em><em>d</em> − <em>p</em><em>r</em><em>i</em><em>c</em><em>e</em><em>t</em><em>u</em><em>r</em><em>n</em><em>k</em><em>e</em><em>y</em>, <em>d</em><em>e</em><em>u</em><em>d</em><em>a</em><em>t</em><em>e</em><em>r</em><em>m</em><em>i</em><em>n</em><em>a</em><em>o</em><em>c</em><em>h</em><em>o</em><em>a</em><em>ñ</em><em>o</em><em>s</em><em>a</em><em>n</em><em>t</em><em>e</em><em>s</em><em>q</em><em>u</em><em>e</em><em>l</em><em>a</em><em>c</em><em>o</em><em>n</em><em>c</em><em>e</em><em>s</em><em>i</em><em>ó</em><em>n</em><em>y</em><em>e</em><em>l</em><em>p</em><em>r</em><em>o</em><em>y</em><em>e</em><em>c</em><em>t</em><em>o</em><em>c</em><em>o</em><em>b</em><em>r</em><em>a</em><em>s</em><em>u</em><em>s</em><em>p</em><em>e</em><em>a</em><em>j</em><em>e</em><em>s</em><em>e</em><em>n</em><em>U</em><em>S</em></span>,
+que es la moneda local. Sin embargo, el flujo base es débil para el
+nivel de deuda indicativo: no existe offtaker ni garantía mínima de
+ingresos, los primeros años dependen de un forecast de tráfico y el OPEX
+inicial absorbe una parte relevante de los ingresos.</p>
+<p>El resultado del Excel es que el proyecto <strong>no soporta 70% de
+deuda</strong>. El máximo de US$172.79m se obtiene al ajustar el
+servicio de deuda al CFADS y al DSCR mínimo de 1.24x. Esto implica
+US$236.22m de equity. La recomendación es <strong>aprobación
+condicionada</strong>, no rechazo automático: exigir equity committed,
+downside traffic case, reservas de liquidez, completion support y
+mitigantes regulatorios/sociales.</p>
+<h3 id="resumen-ejecutivo-tu-parte">Resumen ejecutivo — tu parte:
+Sources &amp; Uses</h3>
+<p>Durante construcción, el SPV necesita <strong>US$409.01m</strong>:
+US$390.00m de CAPEX más US$19.01m de IDC. Los bancos entregan
+<strong>US$172.79m</strong> de senior debt; Italy-A e Italy-B entregan
+el residual de <strong>US$236.22m</strong> como equity. La tabla cuadra
+por año porque cada use tiene una source identificada.</p>
+<p>Tu conclusión no es solo que la tabla suma bien. Es que el equity
+alto revela que la deuda está restringida por el flujo futuro y el
+covenant de DSCR, no por el máximo de leverage. Como equipo presentamos
+la recomendación desde el punto de vista de lenders / credit
+committee.</p>
+<h3 id="navegación-rápida">Navegación rápida</h3>
+<ul>
+<li><a href="#tu-parte-question-3-sources-uses">Tu explicación, roles y
+cada cifra de Sources &amp; Uses</a></li>
+<li><a href="#definiciones-de-cobertura">Definiciones de DSCR, LLCR y
+PLCR</a></li>
+<li><a href="#tasa-hedge-y-moneda">Tasa, hedge y por qué USD
+ayuda</a></li>
+<li><a href="#adversarial">Preguntas adversariales por cifra y
+supuesto</a></li>
+<li><a href="#revision-excel-respuesta">Resumen crítico de Excel y
+respuesta escrita</a></li>
+<li><a href="#mapa-slides">Mapa de slides y quién presenta</a></li>
+</ul>
+<hr />
+<h2 id="tu-parte-question-3-sources-uses">2. Tu parte — Question 3:
+Sources &amp; Uses</h2>
+<h3 id="objetivo-de-tu-intervención">Objetivo de tu intervención</h3>
+<p>Explicar <strong>cuánto cuesta construir</strong>, <strong>cómo se
+financia cada año</strong>, por qué el equity aumenta año a año y por
+qué esta tabla prueba que la deuda debe dimensionarse por flujo, no por
+el límite de leverage.</p>
+<h3 id="qué-papel-tenemos-nosotros-y-quién-entrega-cada-fuente">¿Qué
+papel tenemos nosotros y quién entrega cada fuente?</h3>
+<p><strong>Nuestro papel en la exposición:</strong> hablamos como el
+equipo que prepara la recomendación para el <strong>credit committee /
+lenders</strong>. No somos el SPV ni los sponsors. Nuestra tarea es
+verificar si el SPV puede obtener la deuda solicitada y bajo qué
+condiciones se debería aprobar. Por eso no “elegimos” US$172.79m para
+favorecer al sponsor: lo <strong>limitamos</strong> al importe que el
+flujo puede pagar con el covenant de DSCR.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Parte</th>
+<th>Rol</th>
+<th>Qué entrega o recibe en esta tabla</th>
+<th>Importe / regla</th>
+<th>Etiqueta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Senior lenders / banks</strong></td>
+<td>Acreedores senior del SPV. Tienen prioridad de pago sobre los
+sponsors.</td>
+<td>Entregan deuda al SPV durante construcción; luego reciben interés y
+principal desde CFADS.</td>
+<td><strong>US$172.79m</strong> total; <strong>US$57.60m</strong> al
+inicio de cada año.</td>
+<td><strong>[MODEL OUTPUT]</strong>, limitado por el <strong>[CASE
+DATA]</strong> DSCR mínimo de 1.24x.</td>
+</tr>
+<tr>
+<td><strong>Italy-A</strong></td>
+<td>Sponsor y accionista del SPV.</td>
+<td>Aporta su parte del equity comprometido; absorbe riesgo de pérdida
+antes que los lenders.</td>
+<td><strong>40%</strong> de US$236.22m =
+<strong>US$94.49m</strong>.</td>
+<td>40%: <strong>[CASE DATA]</strong>. Importe: <strong>[MODEL
+OUTPUT]</strong>.</td>
+</tr>
+<tr>
+<td><strong>Italy-B</strong></td>
+<td>Sponsor y accionista mayoritario del SPV.</td>
+<td>Aporta su parte del equity comprometido; es el principal punto de
+preocupación por capacidad financiera.</td>
+<td><strong>60%</strong> de US$236.22m =
+<strong>US$141.73m</strong>.</td>
+<td>60%: <strong>[CASE DATA]</strong>. Importe: <strong>[MODEL
+OUTPUT]</strong>.</td>
+</tr>
+<tr>
+<td><strong>SPV / Rutas de Tapiocapolis</strong></td>
+<td>Vehículo que firma la concesión, toma deuda y ejecuta el
+proyecto.</td>
+<td>Recibe deuda y equity; paga CAPEX e IDC durante construcción;
+después cobra peajes y paga deuda.</td>
+<td>Debe mantener Sources = Uses cada año.</td>
+<td>Rol: <strong>[CASE DATA]</strong> / estructura de project
+finance.</td>
+</tr>
+<tr>
+<td><strong>EPC contractor (Sub A)</strong></td>
+<td>Constructor, no financiador.</td>
+<td>Recibe los pagos de CAPEX del SPV y entrega la carretera bajo EPC
+fixed-price turnkey.</td>
+<td>CAPEX base de <strong>US$390m</strong>.</td>
+<td>CAPEX: <strong>[CASE DATA]</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Frase segura si te preguntan “who gives the money?”</strong>:
+<em>“The banks provide the US$172.79m senior loan to the SPV. Italy-A
+and Italy-B provide the remaining US$236.22m as equity, pro rata to
+their 40% and 60% ownership. The SPV uses those funds to pay the EPC
+construction cost and construction interest. We are presenting the
+lender-side credit recommendation.”</em></p>
+<p><strong>No digas:</strong> “el contractor pone el CAPEX” o “el SPV
+pone el dinero”. El contractor ejecuta la obra y el SPV canaliza fondos;
+los financiadores son lenders y sponsors.</p>
+<h3 id="por-qué-cada-cifra-de-la-tabla-tiene-ese-valor">Por qué cada
+cifra de la tabla tiene ese valor</h3>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 25%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr>
+<th>Línea de la tabla</th>
+<th style="text-align: right;">Valor</th>
+<th>¿Dato, supuesto o resultado?</th>
+<th>De dónde sale / por qué es ese valor</th>
+<th>Cómo defenderlo en una pregunta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Construction CAPEX</td>
+<td style="text-align: right;">US$390.00m</td>
+<td><strong>[CASE DATA]</strong></td>
+<td>Es el costo de obra entregado en el caso.</td>
+<td>“We use the stated project CAPEX; it is not estimated by our
+team.”</td>
+</tr>
+<tr>
+<td>CAPEX por año</td>
+<td style="text-align: right;">US$130.00m</td>
+<td><strong>[CASE DATA]</strong> / distribución dada</td>
+<td>US$390.00m ÷ 3 años de construcción.</td>
+<td>“The case spreads construction CAPEX evenly across 2023–2025.”</td>
+</tr>
+<tr>
+<td>Interest rate</td>
+<td style="text-align: right;">5.5%</td>
+<td><strong>[CASE DATA]</strong></td>
+<td>Tasa de market sounding proporcionada por el caso.</td>
+<td>“5.5% is the stated debt pricing input. A higher rate would reduce
+debt capacity.”</td>
+</tr>
+<tr>
+<td>Debt draw per year</td>
+<td style="text-align: right;">US$57.60m</td>
+<td><strong>[MODEL OUTPUT]</strong></td>
+<td>Deuda sostenible US$172.79m ÷ tres drawdowns iguales.</td>
+<td>“The number is the annual share of the DSCR-sized debt, not 70% of
+CAPEX.”</td>
+</tr>
+<tr>
+<td>IDC 2023</td>
+<td style="text-align: right;">US$3.17m</td>
+<td><strong>[MODEL OUTPUT]</strong></td>
+<td>5.5% × US$57.60m, porque el draw se hace al inicio de 2023.</td>
+<td>“Full-year interest applies because the case places the drawdown at
+the start of the year.”</td>
+</tr>
+<tr>
+<td>IDC 2024</td>
+<td style="text-align: right;">US$6.34m</td>
+<td><strong>[MODEL OUTPUT]</strong></td>
+<td>5.5% × (57.60 + 57.60) = 5.5% × US$115.19m.</td>
+<td>“The balance outstanding has doubled, so IDC doubles.”</td>
+</tr>
+<tr>
+<td>IDC 2025</td>
+<td style="text-align: right;">US$9.50m</td>
+<td><strong>[MODEL OUTPUT]</strong></td>
+<td>5.5% × US$172.79m tras el tercer draw.</td>
+<td>“IDC rises with the outstanding debt balance; it is not a flat
+fee.”</td>
+</tr>
+<tr>
+<td>Total IDC</td>
+<td style="text-align: right;">US$19.01m</td>
+<td><strong>[MODEL OUTPUT]</strong></td>
+<td>3.17 + 6.34 + 9.50.</td>
+<td>“It is the cash interest during construction under the final
+DSCR-sized debt case.”</td>
+</tr>
+<tr>
+<td>Total uses</td>
+<td style="text-align: right;">US$409.01m</td>
+<td><strong>[MODEL OUTPUT]</strong></td>
+<td>US$390.00m CAPEX + US$19.01m IDC.</td>
+<td>“Uses include every cash need, including construction
+interest.”</td>
+</tr>
+<tr>
+<td>Senior debt</td>
+<td style="text-align: right;">US$172.79m</td>
+<td><strong>[MODEL OUTPUT]</strong></td>
+<td>Present value of debt service sculpted as CFADS ÷ 1.24x at
+5.5%.</td>
+<td>“Debt is set by repayment capacity under the minimum DSCR, not by
+the 70% ceiling.”</td>
+</tr>
+<tr>
+<td>Sponsor equity</td>
+<td style="text-align: right;">US$236.22m</td>
+<td><strong>[MODEL OUTPUT]</strong></td>
+<td>US$409.01m total uses − US$172.79m senior debt.</td>
+<td>“Equity is the residual source needed so that total sources equal
+total uses.”</td>
+</tr>
+<tr>
+<td>Debt / total uses</td>
+<td style="text-align: right;">42.25%</td>
+<td><strong>[MODEL OUTPUT]</strong></td>
+<td>US$172.79m ÷ US$409.01m.</td>
+<td>“The debt share is below 70% because cash flow, not the market
+maximum, binds.”</td>
+</tr>
+<tr>
+<td>Italy-A / Italy-B equity</td>
+<td style="text-align: right;">US$94.49m / US$141.73m</td>
+<td><strong>[MODEL OUTPUT]</strong></td>
+<td>40% / 60% of US$236.22m.</td>
+<td>“The ownership split comes from the case; the dollar amount follows
+the final equity requirement.”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>La lógica que debes repetir:</strong> el caso nos da el
+costo, plazo, tasa, ownership y covenant. El modelo calcula cuánta deuda
+puede pagar el proyecto. El equity cubre la diferencia. El comité decide
+si esos compromisos y protecciones son suficientes para aprobar.</p>
+<h3 id="guion-de-90120-segundos">Guion de 90–120 segundos</h3>
+<blockquote>
+<p>“This slide shows the construction-period funding plan. We separate
+<strong>uses</strong>, meaning every cash requirement of the project,
+from <strong>sources</strong>, meaning where that cash comes from.</p>
+<p>The base construction CAPEX is US$390m. The case assumes a three-year
+construction period with CAPEX spread evenly, so the project needs
+US$130m in 2023, 2024 and 2025.</p>
+<p>The second use is <strong>interest during construction</strong>, or
+IDC. Debt is drawn in three equal tranches at the beginning of each
+construction year, and interest accrues immediately at 5.5%. Because the
+outstanding debt balance grows every year, IDC rises from US$3.17m to
+US$6.34m and US$9.50m. Total IDC is US$19.01m.</p>
+<p>The model assumes IDC is paid in cash by equity and is not
+capitalised. Therefore total uses are US$409.01m, not only the US$390m
+construction CAPEX.</p>
+<p>On sources, senior debt is US$172.79m, or US$57.60m per year. This is
+not the 70% market ceiling; it is the debt amount that the project can
+actually repay while maintaining a 1.24x DSCR during operations. Sponsor
+equity is the residual funding source: US$75.57m in 2023, US$78.74m in
+2024 and US$81.91m in 2025, for a total of US$236.22m.</p>
+<p>The structure balances in each year: sources equal uses. The key
+credit message is that debt represents only 42.2% of total uses because
+cash-flow capacity, rather than the leverage cap, is the binding
+constraint.”</p>
+</blockquote>
+<h3 id="si-la-exposición-será-en-español">Si la exposición será en
+español</h3>
+<blockquote>
+<p>“Esta lámina muestra el plan de financiamiento durante construcción.
+Separamos los <strong>uses</strong>, es decir todos los requerimientos
+de caja, de los <strong>sources</strong>, que son los recursos que
+cubren esos requerimientos.</p>
+<p>El CAPEX base es US$390m. Como la construcción dura tres años y el
+CAPEX se distribuye de manera uniforme, se requieren US$130m por año
+entre 2023 y 2025.</p>
+<p>El segundo uso es el <strong>interest during construction</strong> o
+IDC. La deuda se desembolsa en tres tramos iguales al inicio de cada año
+de construcción y devenga intereses de 5.5% desde el primer desembolso.
+Como el saldo de deuda crece, el IDC sube de US$3.17m a US$6.34m y
+US$9.50m. El total es US$19.01m.</p>
+<p>En nuestro modelo el IDC se paga en efectivo con equity; no se
+capitaliza. Por eso los usos totales son US$409.01m y no solamente
+US$390m.</p>
+<p>La deuda senior es US$172.79m, US$57.60m por año. No es el 70% máximo
+indicativo del mercado: es la deuda que el flujo puede repagar
+manteniendo DSCR de 1.24x. El equity cubre el residual: US$75.57m,
+US$78.74m y US$81.91m. Así, las fuentes igualan los usos en cada año. El
+mensaje es que la capacidad de flujo, y no el techo de leverage,
+determina la deuda.”</p>
+</blockquote>
+<h3 id="números-que-debes-memorizar">Números que debes memorizar</h3>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr>
+<th>Concepto</th>
+<th style="text-align: right;">2023</th>
+<th style="text-align: right;">2024</th>
+<th style="text-align: right;">2025</th>
+<th style="text-align: right;">Total</th>
+<th>Intuición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Construction CAPEX</td>
+<td style="text-align: right;">130.00</td>
+<td style="text-align: right;">130.00</td>
+<td style="text-align: right;">130.00</td>
+<td style="text-align: right;">390.00</td>
+<td>Caso: CAPEX distribuido uniformemente en 3 años.</td>
+</tr>
+<tr>
+<td>IDC</td>
+<td style="text-align: right;">3.17</td>
+<td style="text-align: right;">6.34</td>
+<td style="text-align: right;">9.50</td>
+<td style="text-align: right;">19.01</td>
+<td>5.5% sobre el saldo de deuda luego de cada drawdown.</td>
+</tr>
+<tr>
+<td><strong>Total uses</strong></td>
+<td style="text-align: right;"><strong>133.17</strong></td>
+<td style="text-align: right;"><strong>136.34</strong></td>
+<td style="text-align: right;"><strong>139.50</strong></td>
+<td style="text-align: right;"><strong>409.01</strong></td>
+<td>CAPEX + IDC.</td>
+</tr>
+<tr>
+<td>Senior debt</td>
+<td style="text-align: right;">57.60</td>
+<td style="text-align: right;">57.60</td>
+<td style="text-align: right;">57.60</td>
+<td style="text-align: right;">172.79</td>
+<td>Deuda dimensionada por DSCR.</td>
+</tr>
+<tr>
+<td>Sponsor equity</td>
+<td style="text-align: right;">75.57</td>
+<td style="text-align: right;">78.74</td>
+<td style="text-align: right;">81.91</td>
+<td style="text-align: right;">236.22</td>
+<td>Residual: total uses − senior debt.</td>
+</tr>
+<tr>
+<td><strong>Total sources</strong></td>
+<td style="text-align: right;"><strong>133.17</strong></td>
+<td style="text-align: right;"><strong>136.34</strong></td>
+<td style="text-align: right;"><strong>139.50</strong></td>
+<td style="text-align: right;"><strong>409.01</strong></td>
+<td>La tabla cuadra cada año.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Participación de fuentes:</strong> deuda 42.25%; equity
+57.75%.</p>
+<p><strong>Equity por sponsor:</strong> Italy-A 40% = US$94.49m; Italy-B
+60% = US$141.73m.</p>
+<h3 id="fórmulas-simples-que-puedes-explicar">Fórmulas simples que
+puedes explicar</h3>
+<pre class="text"><code>Construction CAPEX per year = US$390m / 3 = US$130m
+Debt drawdown per year = US$172.79m / 3 = US$57.60m
+IDC 2023 = 5.5% × US$57.60m = US$3.17m
+IDC 2024 = 5.5% × US$115.19m = US$6.34m
+IDC 2025 = 5.5% × US$172.79m = US$9.50m
+Equity each year = Total uses each year − Debt drawdown each year</code></pre>
+<h3 id="la-intuición-detrás-de-cada-número">La intuición detrás de cada
+número</h3>
+<ul>
+<li><strong>US$390m CAPEX:</strong> dato del caso; incluye el costo
+estimado del proyecto. El contrato EPC es fixed-price y turn-key, pero
+el caso no incluye una contingencia explícita.</li>
+<li><strong>Tres años / US$130m por año:</strong> supuesto del caso.
+Simplifica el perfil de gasto, pero no elimina el riesgo de retrasos o
+de desviaciones en túneles y reasentamiento.</li>
+<li><strong>5.5% interest rate:</strong> dato del market sounding. La
+tasa comienza a devengarse desde el primer desembolso.</li>
+<li><strong>IDC creciente:</strong> el interés sube porque la base sobre
+la cual se calcula también sube: hay más deuda outstanding cada
+año.</li>
+<li><strong>IDC pagado por equity:</strong> es un supuesto de
+modelación. Significa que el interés se paga en efectivo y no se añade
+al principal. Es más conservador para la deuda final, pero aumenta
+equity requerido en construcción.</li>
+<li><strong>US$172.79m debt:</strong> resultado, no input. Es el valor
+presente de los debt services que el CFADS puede soportar manteniendo
+1.24x de DSCR.</li>
+<li><strong>US$236.22m equity:</strong> residual necesario para que cada
+año “sources = uses”. Más equity mejora la protección de lenders, pero
+reduce la rentabilidad de sponsors.</li>
+</ul>
+<h3 id="diferencia-clave-us19.01m-vs.-us32.5m-de-idc">Diferencia clave:
+US$19.01m vs. ~US$32.5m de IDC</h3>
+<p>No digas que ambos son el mismo escenario.</p>
+<ul>
+<li><strong>US$19.01m</strong> es el IDC del modelo final con deuda de
+<strong>US$172.79m</strong>, en tres drawdowns iguales.</li>
+<li><strong>~US$32.5m</strong> es el orden de magnitud de IDC bajo la
+alternativa de aproximadamente <strong>US$296m de deuda</strong>,
+asociada al 70:30. Aparece en la discusión de riesgos de financiamiento
+para mostrar que dicha estructura genera además un funding gap
+mayor.</li>
+</ul>
+<p>La respuesta segura es: <em>“La tabla de Sources &amp; Uses usa la
+deuda final dimensionada por DSCR. La cifra de US$32.5m es un escenario
+alternativo de mayor leverage, no la tabla final.”</em></p>
+<h3 id="transición-al-siguiente-expositor">Transición al siguiente
+expositor</h3>
+<blockquote>
+<p>“The Sources &amp; Uses table tells us how much capital is required
+during construction. The next step is to test whether future operating
+cash flows can repay the US$172.79m debt while preserving lender
+coverage ratios.”</p>
+</blockquote>
+<hr />
+<h2 id="glosario-término-significado-e-implicación">3. Glosario:
+término, significado e implicación</h2>
+<h3 id="definiciones-de-cobertura">Definiciones de cobertura</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Ratio</th>
+<th>Fórmula</th>
+<th>Qué pregunta responde</th>
+<th>Valor y lectura correcta en este caso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DSCR</strong></td>
+<td>CFADS ÷ debt service del año</td>
+<td>“¿El efectivo de este año alcanza para interés y principal de este
+año?”</td>
+<td><strong>Covenant del caso: ≥ 1.24x. Resultado mínimo del modelo:
+1.24x.</strong> Por cada US$1.00 de deuda que vence, hay US$1.24 de
+CFADS. Cumple, pero no tiene colchón porque se esculpió justo en el
+mínimo.</td>
+</tr>
+<tr>
+<td><strong>LLCR</strong></td>
+<td>PV del CFADS restante hasta el vencimiento de la deuda ÷ saldo de
+deuda</td>
+<td>“Viendo todos los flujos que llegan antes de terminar el préstamo,
+¿cuánto cubren el saldo actual?”</td>
+<td><strong>Resultado mínimo: ~1.24x.</strong> El caso no entrega un
+covenant LLCR separado. Que sea parecido al DSCR es esperable: la
+amortización se sculpted al piso de 1.24x. Un ratio de 1.00x sería
+apenas suficiente en valor presente; mayor es mejor.</td>
+</tr>
+<tr>
+<td><strong>PLCR</strong></td>
+<td>PV del CFADS restante hasta el fin de la concesión ÷ saldo de
+deuda</td>
+<td>“Si incluyo toda la vida del proyecto, incluso después de pagar la
+deuda, ¿qué cobertura total tiene el lender?”</td>
+<td><strong>Resultado mínimo: ~1.81x.</strong> El caso no entrega un
+covenant PLCR separado. Es mayor que LLCR porque añade los ocho años
+2038–2045 sin deuda; mejora recovery/refinancing capacity, pero no
+reemplaza al DSCR anual.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Forma corta de decirlo:</strong> <em>“DSCR looks at one
+payment year; LLCR looks at all cash flow until loan maturity; PLCR
+looks at all cash flow until concession expiry. Higher is safer, but in
+this case only the 1.24x DSCR is the stated lender covenant.”</em></p>
+<h3 id="tasa-hedge-y-moneda">Tasa, hedge y moneda</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Clasificación</th>
+<th>Explicación clara para exposición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>5.5% interest rate</strong></td>
+<td><strong>[CASE DATA]</strong></td>
+<td>Proviene del market sounding. El modelo aplica 5.5% como tasa
+constante porque el caso no aclara si es fixed o floating.</td>
+</tr>
+<tr>
+<td><strong>¿Qué es un hedge?</strong></td>
+<td><strong>[CREDIT RECOMMENDATION]</strong></td>
+<td>Si la deuda es floating, un interest-rate swap puede convertir pagos
+variables en pagos fijos. No reduce el principal; reduce la
+incertidumbre de los intereses y ayuda a proteger DSCR.</td>
+</tr>
+<tr>
+<td><strong>“US$3m adicionales”</strong></td>
+<td>Escenario alternativo de la respuesta escrita</td>
+<td>La respuesta escrita estima que un aumento de <strong>100
+bp</strong> puede costar cerca de <strong>US$3m por año</strong> bajo la
+alternativa de alta deuda cercana a US$296m. No usar ese importe como
+efecto del modelo final. Con US$172.79m de deuda final, 100 bp equivale
+aproximadamente a <strong>US<span
+class="math inline">1.73<em>m</em> * *<em>d</em><em>e</em><em>i</em><em>n</em><em>t</em><em>e</em><em>r</em><em>é</em><em>s</em><em>a</em><em>n</em><em>u</em><em>a</em><em>l</em><em>a</em><em>d</em><em>i</em><em>c</em><em>i</em><em>o</em><em>n</em><em>a</em><em>l</em><em>a</em><em>n</em><em>t</em><em>e</em><em>s</em><em>d</em><em>e</em><em>a</em><em>m</em><em>o</em><em>r</em><em>t</em><em>i</em><em>z</em><em>a</em><em>r</em>.||* * ¿<em>Q</em><em>u</em><em>é</em><em>h</em><em>a</em><em>c</em><em>e</em><em>r</em><em>s</em><em>i</em><em>l</em><em>a</em><em>t</em><em>a</em><em>s</em><em>a</em><em>e</em><em>s</em><em>f</em><em>l</em><em>o</em><em>a</em><em>t</em><em>i</em><em>n</em><em>g</em>? * *|* * [<em>C</em><em>R</em><em>E</em><em>D</em><em>I</em><em>T</em><em>R</em><em>E</em><em>C</em><em>O</em><em>M</em><em>M</em><em>E</em><em>N</em><em>D</em><em>A</em><em>T</em><em>I</em><em>O</em><em>N</em>] * *|<em>C</em><em>o</em><em>n</em><em>t</em><em>r</em><em>a</em><em>t</em><em>a</em><em>r</em><em>h</em><em>e</em><em>d</em><em>g</em><em>e</em><em>c</em><em>o</em><em>n</em><em>p</em><em>l</em><em>a</em><em>z</em><em>o</em><em>a</em><em>l</em><em>i</em><em>n</em><em>e</em><em>a</em><em>d</em><em>o</em><em>a</em><em>l</em><em>a</em><em>d</em><em>e</em><em>u</em><em>d</em><em>a</em><em>y</em><em>r</em><em>e</em><em>c</em><em>a</em><em>l</em><em>c</em><em>u</em><em>l</em><em>a</em><em>r</em><em>D</em><em>S</em><em>C</em><em>R</em><em>c</em><em>o</em><em>n</em><em>l</em><em>a</em><em>t</em><em>a</em><em>s</em><em>a</em><em>h</em><em>e</em><em>d</em><em>g</em><em>e</em><em>a</em><em>d</em><em>a</em><em>y</em><em>c</em><em>o</em><em>n</em><em>u</em><em>n</em><em>s</em><em>t</em><em>r</em><em>e</em><em>s</em><em>s</em><em>d</em><em>e</em><em>t</em><em>a</em><em>s</em><em>a</em>.<em>E</em><em>l</em><em>h</em><em>e</em><em>d</em><em>g</em><em>e</em><em>n</em><em>o</em><em>r</em><em>e</em><em>e</em><em>m</em><em>p</em><em>l</em><em>a</em><em>z</em><em>a</em><em>l</em><em>a</em><em>n</em><em>e</em><em>c</em><em>e</em><em>s</em><em>i</em><em>d</em><em>a</em><em>d</em><em>d</em><em>e</em><em>d</em><em>i</em><em>m</em><em>e</em><em>n</em><em>s</em><em>i</em><em>o</em><em>n</em><em>a</em><em>r</em><em>d</em><em>e</em><em>u</em><em>d</em><em>a</em><em>p</em><em>o</em><em>r</em><em>C</em><em>F</em><em>A</em><em>D</em><em>S</em>.||* * ¿<em>P</em><em>o</em><em>r</em><em>q</em><em>u</em><em>é</em><em>r</em><em>e</em><em>v</em><em>e</em><em>n</em><em>u</em><em>e</em><em>y</em><em>d</em><em>e</em><em>b</em><em>t</em><em>e</em><em>n</em><em>U</em><em>S</em></span>
+ayudan?</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="glosario-general">Glosario general</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Término</th>
+<th>Significado</th>
+<th>Qué implica en este caso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SPV</strong></td>
+<td>Special Purpose Vehicle; compañía del proyecto.</td>
+<td>Rutas de Tapiocapolis recibe ingresos, firma contratos y toma la
+deuda. Aísla el riesgo del proyecto.</td>
+</tr>
+<tr>
+<td><strong>Sources &amp; Uses</strong></td>
+<td>Tabla de orígenes y aplicaciones de fondos.</td>
+<td>Debe cuadrar: cada dólar requerido debe tener fuente
+identificada.</td>
+</tr>
+<tr>
+<td><strong>CAPEX</strong></td>
+<td>Capital expenditure; inversión para construir el activo.</td>
+<td>US$390m de obra durante 2023–2025.</td>
+</tr>
+<tr>
+<td><strong>IDC</strong></td>
+<td>Interest During Construction.</td>
+<td>Interés antes de que haya ingresos operativos; aquí lo paga equity y
+no se capitaliza.</td>
+</tr>
+<tr>
+<td><strong>Drawdown / disbursement</strong></td>
+<td>Desembolso de deuda.</td>
+<td>Tres drawdowns iguales de US$57.60m al inicio de cada año de
+construcción.</td>
+</tr>
+<tr>
+<td><strong>Outstanding debt</strong></td>
+<td>Saldo de deuda pendiente.</td>
+<td>Base para calcular intereses; llega a US$172.79m al final de
+construcción.</td>
+</tr>
+<tr>
+<td><strong>Equity residual</strong></td>
+<td>Aporte que cubre lo que deuda no cubre.</td>
+<td>Hace cuadrar Sources &amp; Uses; aumenta si IDC o CAPEX
+aumentan.</td>
+</tr>
+<tr>
+<td><strong>Leverage</strong></td>
+<td>Proporción de deuda en el financiamiento.</td>
+<td>70% es máximo indicativo; la estructura final es 42.2% porque el
+flujo no soporta más.</td>
+</tr>
+<tr>
+<td><strong>CFADS</strong></td>
+<td>Cash Flow Available for Debt Service.</td>
+<td>EBITDA menos impuestos; flujo disponible para pagar principal e
+intereses. Inicia en US$22m en 2026.</td>
+</tr>
+<tr>
+<td><strong>DSCR</strong></td>
+<td>CFADS / debt service del período.</td>
+<td>Mide capacidad anual de pago. El covenant dado por el caso es
+≥1.24x; el modelo llega justo a ese piso.</td>
+</tr>
+<tr>
+<td><strong>LLCR</strong></td>
+<td>PV del CFADS durante la vida de la deuda / deuda pendiente.</td>
+<td>Mide cobertura de la deuda con flujos antes del vencimiento.
+Resultado del modelo ~1.24x; no hay covenant LLCR separado en el
+caso.</td>
+</tr>
+<tr>
+<td><strong>PLCR</strong></td>
+<td>PV del CFADS durante la vida del proyecto / deuda pendiente.</td>
+<td>Incluye flujos después de que termina el préstamo. Resultado del
+modelo ~1.81x; no hay covenant PLCR separado en el caso.</td>
+</tr>
+<tr>
+<td><strong>Sculpted debt</strong></td>
+<td>Amortización ajustada al perfil de CFADS.</td>
+<td>El debt service anual se fija como CFADS / 1.24x; por eso principal
+crece cuando el flujo crece.</td>
+</tr>
+<tr>
+<td><strong>Interest-only</strong></td>
+<td>Se pagan intereses, no principal.</td>
+<td>Aplica durante los tres años de construcción.</td>
+</tr>
+<tr>
+<td><strong>Debt tenor</strong></td>
+<td>Plazo total de la deuda.</td>
+<td>3 años construction + 12 años repayment; la deuda termina en
+2037.</td>
+</tr>
+<tr>
+<td><strong>Tail</strong></td>
+<td>Años restantes de concesión después de repagar deuda.</td>
+<td>8 años: concesión hasta 2045 vs. deuda hasta 2037. Apoya
+refinanciación o recuperación ante estrés.</td>
+</tr>
+<tr>
+<td><strong>DSRA / MMRA</strong></td>
+<td>Debt Service Reserve Account / Major Maintenance Reserve
+Account.</td>
+<td>No están en el modelo por instrucción; deberían ser condiciones de
+crédito reales.</td>
+</tr>
+<tr>
+<td><strong>Financial close</strong></td>
+<td>Momento de firma definitiva y primer desembolso.</td>
+<td>Debe ocurrir tras permisos, documentos de equity y contratos
+directos.</td>
+</tr>
+<tr>
+<td><strong>COD</strong></td>
+<td>Commercial Operation Date.</td>
+<td>Inicio esperado de operación en 2026; un retraso posterga ingresos y
+presiona deuda.</td>
+</tr>
+<tr>
+<td><strong>Fixed-price turn-key EPC</strong></td>
+<td>Contrato donde EPC entrega activo terminado a precio y fecha
+pactados.</td>
+<td>Mitiga overruns, pero requiere bond, garantía de completion y
+asignación de riesgo geotécnico.</td>
+</tr>
+<tr>
+<td><strong>Step-in rights</strong></td>
+<td>Derecho de lenders a intervenir o reemplazar contraparte.</td>
+<td>Permite proteger el proyecto si fallan EPC u O&amp;M.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="preguntas-probables-para-tu-parte-y-respuestas-cortas">4.
+Preguntas probables para tu parte y respuestas cortas</h2>
+<h3 id="por-qué-no-usan-70-de-deuda-si-el-banco-lo-permite">¿Por qué no
+usan 70% de deuda si el banco lo permite?</h3>
+<p>Porque 70% es un <strong>máximo</strong>, no una deuda
+automáticamente financiable. Con aproximadamente US$295.78m de deuda, el
+modelo tendría DSCR mínimo de <strong>0.74x</strong>, por debajo de
+1.24x. La deuda se limita a US$172.79m porque es la que puede ser
+repagada por CFADS.</p>
+<h3 id="por-qué-el-equity-no-es-igual-cada-año">¿Por qué el equity no es
+igual cada año?</h3>
+<p>El CAPEX y el debt drawdown son constantes, pero IDC crece con el
+saldo de deuda. Como equity cubre el residual, pasa de US$75.57m a
+US$81.91m.</p>
+<h3 id="por-qué-idc-está-en-uses-si-lo-paga-equity">¿Por qué IDC está en
+Uses si lo paga equity?</h3>
+<p>Porque es un requerimiento real de caja durante construcción. Que
+equity lo financie define la fuente, pero no elimina el uso.</p>
+<h3 id="por-qué-el-idc-no-se-capitaliza">¿Por qué el IDC no se
+capitaliza?</h3>
+<p>Es un supuesto adoptado: el interés se paga cada año con equity. Si
+se capitalizara, el saldo de deuda y los intereses futuros serían
+mayores; habría que recalcular el sizing y probablemente el proyecto
+soportaría menos deuda inicial.</p>
+<h3 id="qué-pasaría-si-el-capex-sube-us10m">¿Qué pasaría si el CAPEX
+sube US$10m?</h3>
+<p>Si deuda se mantiene en US$172.79m, equity sube aproximadamente
+US$10m más el IDC adicional asociado si el calendario de draws cambia.
+Si sponsors no aportan, el proyecto queda con funding gap. Por eso
+proponemos contingencia y standby equity.</p>
+<h3 id="por-qué-no-hay-contingencia-en-la-tabla">¿Por qué no hay
+contingencia en la tabla?</h3>
+<p>El caso no la incluye y la pregunta pide modelar bajo sus supuestos.
+Para crédito real, sería una debilidad: recomendamos una contingencia
+dedicada y una equity letter of credit.</p>
+<h3 id="qué-sponsor-cubre-el-equity">¿Qué sponsor cubre el equity?</h3>
+<p>Italy-A cubre 40%, US$94.49m. Italy-B cubre 60%, US$141.73m. El punto
+de crédito es que Italy-B es el sponsor más débil y su compromiso excede
+su capacidad aparente; se requiere soporte de Italy-A, equity LC o un
+nuevo socio.</p>
+<h3 id="la-tabla-ya-considera-dsra-mmra-o-working-capital">¿La tabla ya
+considera DSRA, MMRA o working capital?</h3>
+<p>No. El caso solicita asumir que no existen reserve accounts, y el
+modelo tampoco incluye working capital ni maintenance CAPEX. Es un
+supuesto que hace al caso base menos conservador que una estructura
+financiable real.</p>
+<hr />
+<h2 id="preguntas-probables-al-equipo">5. Preguntas probables al
+equipo</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Pregunta</th>
+<th>Respuesta defendible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>¿Quién absorbe el riesgo de construcción?</td>
+<td>Sub A bajo EPC fixed-price turn-key; pero lenders requieren
+performance bond, completion guarantee, Independent Engineer,
+contingencia y derechos de step-in.</td>
+</tr>
+<tr>
+<td>¿Por qué el demand risk es alto?</td>
+<td>No hay offtaker ni minimum revenue guarantee. Tráfico pesado
+representa 40% y depende de minería/agro y China; además el ramp-up
+coincide con los primeros años de repago.</td>
+</tr>
+<tr>
+<td>¿Qué protege frente a riesgo político/legal?</td>
+<td>Fórmula de tarifa e indexación, estabilización de impuestos, cambio
+de ley, arbitraje internacional, termination payment que cubra senior
+debt, DFI/ECA/MIGA.</td>
+</tr>
+<tr>
+<td>¿Por qué el DSCR es exactamente 1.24x?</td>
+<td>La amortización es sculpted: debt service = CFADS / 1.24x cada año.
+Cumple el covenant, pero deja muy poco margen; no es una holgura
+económica.</td>
+</tr>
+<tr>
+<td>¿Por qué LLCR mínimo es casi 1.24x?</td>
+<td>Con debt service esculpido al DSCR objetivo y discount rate de 5.5%,
+el valor presente del CFADS restante se alinea con la deuda
+pendiente.</td>
+</tr>
+<tr>
+<td>¿Por qué PLCR es mayor que LLCR?</td>
+<td>PLCR incorpora CFADS de toda la concesión, incluidos los ocho años
+posteriores a 2037; LLCR solo incluye CFADS durante el loan life.</td>
+</tr>
+<tr>
+<td>¿Por qué el sponsors’ IRR de 1.52% es malo?</td>
+<td>No compensa riesgo de tráfico, construcción, país y sponsor. Además,
+el costo de la deuda (5.5%) supera el project IRR after tax (2.60%), por
+lo que el leverage destruye retorno de equity.</td>
+</tr>
+<tr>
+<td>¿Por qué recomiendan aprobar condicionado y no rechazar?</td>
+<td>Hay fortalezas: concesión larga, EPC fixed-price, moneda coincidente
+US$, PLCR 1.81x y tail de 8 años. Pero la aprobación requiere menor
+deuda, equity firme, reservas, garantías y protecciones
+contractuales.</td>
+</tr>
+<tr>
+<td>¿Qué condición es más importante antes del primer drawdown?</td>
+<td>Equity committed y disponible, permisos/material E&amp;S completos,
+EPC/bonds y direct agreements ejecutados; sin ellos el riesgo de
+completion y funding gap es demasiado alto.</td>
+</tr>
+<tr>
+<td>¿Qué cambia si la tasa sube 100 bp?</td>
+<td>El caso escrito estima alrededor de US<span
+class="math inline">3<em>m</em><em>a</em><em>n</em><em>u</em><em>a</em><em>l</em><em>e</em><em>s</em><em>a</em><em>d</em><em>i</em><em>c</em><em>i</em><em>o</em><em>n</em><em>a</em><em>l</em><em>e</em><em>s</em><em>b</em><em>a</em><em>j</em><em>o</em><em>l</em><em>a</em><em>a</em><em>l</em><em>t</em><em>e</em><em>r</em><em>n</em><em>a</em><em>t</em><em>i</em><em>v</em><em>a</em><em>d</em><em>e</em><em>a</em><em>l</em><em>t</em><em>a</em><em>d</em><em>e</em><em>u</em><em>d</em><em>a</em>.<em>L</em><em>a</em><em>r</em><em>e</em><em>s</em><em>p</em><em>u</em><em>e</em><em>s</em><em>t</em><em>a</em><em>d</em><em>e</em><em>c</em><em>r</em><em>é</em><em>d</em><em>i</em><em>t</em><em>o</em><em>e</em><em>s</em><em>h</em><em>e</em><em>d</em><em>g</em><em>e</em><em>d</em><em>e</em><em>t</em><em>a</em><em>s</em><em>a</em><em>s</em><em>i</em><em>l</em><em>a</em><em>d</em><em>e</em><em>u</em><em>d</em><em>a</em><em>e</em><em>s</em><em>f</em><em>l</em><em>o</em><em>a</em><em>t</em><em>i</em><em>n</em><em>g</em><em>y</em><em>r</em><em>e</em><em>v</em><em>a</em><em>l</em><em>i</em><em>d</em><em>a</em><em>c</em><em>i</em><em>ó</em><em>n</em><em>d</em><em>e</em><em>D</em><em>S</em><em>C</em><em>R</em>.||¿<em>P</em><em>o</em><em>r</em><em>q</em><em>u</em><em>é</em><em>r</em><em>e</em><em>v</em><em>e</em><em>n</em><em>u</em><em>e</em><em>y</em><em>d</em><em>e</em><em>b</em><em>t</em><em>e</em><em>n</em><em>U</em><em>S</em></span>
+ayudan?</td>
+</tr>
+<tr>
+<td>¿Cuántos años de tail existen?</td>
+<td>Ocho: el proyecto opera hasta 2045 y la deuda finaliza en 2037.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="mini-ensayo-oral-preguntas-rápidas">6. Mini ensayo oral:
+preguntas rápidas</h2>
+<p>Pide a alguien que te pregunte, sin mirar la tabla:</p>
+<ol type="1">
+<li>¿Cuál es el total de uses y por qué no es US$390m?</li>
+<li>¿Qué es IDC y por qué aumenta cada año?</li>
+<li>¿Cuál es la deuda total, cuánto se desembolsa por año y por
+qué?</li>
+<li>¿Por qué equity es mayor en 2025 que en 2023?</li>
+<li>¿Por qué 70:30 no funciona aunque sea el máximo de mercado?</li>
+<li>¿Qué diferencia hay entre DSCR, LLCR y PLCR?</li>
+<li>¿Por qué PLCR es mayor que LLCR?</li>
+<li>¿Qué elemento falta en Sources &amp; Uses para una financiación
+real?</li>
+<li>¿Qué sponsor es la principal preocupación y por qué?</li>
+<li>Si solo pudieras pedir una condición al comité, ¿cuál sería?</li>
+</ol>
+<p>La respuesta de la pregunta 10: <strong>equity committed con soporte
+crediticio antes de cada drawdown</strong>, porque cubre construction
+overruns, IDC y la debilidad de Italy-B. En paralelo, exigiría DSRA y
+completion support.</p>
+<hr />
+<h2 id="frases-útiles-para-sonar-preciso">7. Frases útiles para sonar
+preciso</h2>
+<ul>
+<li>“The leverage cap is a ceiling, not a debt-sizing outcome.”</li>
+<li>“Sources and Uses balances annually and in aggregate.”</li>
+<li>“IDC is a cash funding requirement even when it is funded by
+equity.”</li>
+<li>“Debt is sculpted to CFADS, not amortised in equal principal
+instalments.”</li>
+<li>“The base case meets the covenant, but it has no headroom.”</li>
+<li>“The project is conditionally bankable, not bankable on the
+indicative 70:30 terms.”</li>
+<li>“We distinguish the modelled base case from the 70:30 stress
+case.”</li>
+</ul>
+<hr />
+<h2 id="mapa-slides">8. Mapa de slides: qué decir, quién debería hablar
+y qué ajustar</h2>
+<h3
+id="si-presentan-el-archivo-presentacion_final_rutas_de_tapiocapolis_language_review_mckinsey.pptx">Si
+presentan el archivo
+<code>Presentacion_Final_Rutas_de_Tapiocapolis_Language_Review_McKinsey.pptx</code></h3>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: right;">Slide en archivo bilingüe</th>
+<th style="text-align: right;">Slide dentro de cada idioma</th>
+<th>Contenido</th>
+<th>Qué se debe decir</th>
+<th>Sugerencia de expositor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">Separador</td>
+<td>ENGLISH</td>
+<td>“We will first present the English version.”</td>
+<td>Moderador</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td>Cover</td>
+<td>Nombre del proyecto, grupo y objetivo de la exposición.</td>
+<td>Moderador</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td>Index</td>
+<td>Recorrido: proyecto, riesgos, estructura, retornos y decisión.</td>
+<td>Moderador</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td>Executive Summary</td>
+<td>La conclusión desde el inicio: 70:30 no es bancable; US$172.79m sí
+cumple base case.</td>
+<td>Integrante 1</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+<td>Project Overview</td>
+<td>Concesión, activo, túneles, tráfico y contexto operativo.</td>
+<td>Integrante 1</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">5</td>
+<td>Key Assumptions</td>
+<td>Declarar qué viene del caso y qué es supuesto de modelación.</td>
+<td>Integrante 1 / 2</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">6</td>
+<td>Stakeholders &amp; Wiring</td>
+<td>Riesgo y contratos alrededor del SPV.</td>
+<td>Integrante 2</td>
+</tr>
+<tr>
+<td style="text-align: right;">8–9</td>
+<td style="text-align: right;">7–8</td>
+<td>Risk Allocation</td>
+<td>Riesgos, dueño del riesgo y mitigante.</td>
+<td>Integrante 2</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>10</strong></td>
+<td style="text-align: right;"><strong>9</strong></td>
+<td><strong>Sources &amp; Uses</strong></td>
+<td><strong>Tu parte principal.</strong> Presenta CAPEX, IDC, deuda y
+equity.</td>
+<td><strong>Tú</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">10</td>
+<td>Operating Model</td>
+<td>Revenue, OPEX y CFADS. Es el puente a debt sizing.</td>
+<td>Tú: transición; Integrante 3: detalle</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">11</td>
+<td>Sculpted Debt &amp; Ratios</td>
+<td>DSCR, LLCR, PLCR y perfil de amortización.</td>
+<td>Integrante 3</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">12</td>
+<td>Sponsors’ IRR</td>
+<td>Explicar por qué 1.52% no compensa el riesgo.</td>
+<td>Integrante 4</td>
+</tr>
+<tr>
+<td style="text-align: right;">14–15</td>
+<td style="text-align: right;">13–14</td>
+<td>Credit Committee / Conditions</td>
+<td>Decisión condicionada y condiciones precedentes.</td>
+<td>Integrante 4 / Moderador</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">Separador</td>
+<td>ESPAÑOL</td>
+<td>No es para presentar ambas versiones. Es solo para elegir
+idioma.</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align: right;">17–30</td>
+<td style="text-align: right;">1–14 en español</td>
+<td>Versión español</td>
+<td>Utilizar solo si el profesor pide español. Sources &amp; Uses es la
+slide <strong>25</strong>.</td>
+<td>Mismo reparto</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lo-que-tú-deberías-decir-exactamente-en-tu-bloque">Lo que tú
+deberías decir exactamente en tu bloque</h3>
+<ol type="1">
+<li><strong>Slide 10 / Sources &amp; Uses:</strong> tu guion de 90–120
+segundos de la sección 2.</li>
+<li><strong>Slide 11 / Operating Model:</strong> solo una frase de
+transición: <em>“This construction funding plan is feasible only because
+debt was sized to the CFADS shown next.”</em></li>
+<li><strong>Slide 12 / Debt &amp; Coverage:</strong> intervén si
+preguntan por qué tu tabla usa US$172.79m; remite a DSCR 1.24x y a la
+amortización sculpted.</li>
+<li><strong>Cierre de tu participación:</strong> <em>“Sources and Uses
+is balanced mechanically, but bankability depends on whether the
+operating cash flow can service the debt. That is why the next slide is
+decisive.”</em></li>
+</ol>
+<h3 id="ajustes-recomendados-antes-de-presentar">Ajustes recomendados
+antes de presentar</h3>
+<p>No cambien los números sin recalcular el Excel. Estos ajustes son de
+precisión y defensa:</p>
+<ol type="1">
+<li>En la explicación oral de Sources &amp; Uses, decir
+<strong>“US$409.01m”</strong> si preguntan por precisión; la slide
+muestra <strong>US$409.0m</strong> por redondeo.</li>
+<li>Aclaren verbalmente que 70:30 es <strong>70% debt / 30% equity de la
+capital structure</strong>, una cota máxima indicativa y no el resultado
+del model.</li>
+<li>Cuando mencionen el IDC, añadan: <em>“We use an annual-period
+assumption: each drawdown occurs at the start of the construction year
+and interest is calculated on the post-draw balance.”</em> Esto anticipa
+la pregunta por el timing.</li>
+<li>No digan que DSRA/MMRA están incluidos: el modelo los excluye por
+instrucciones. Díganlos como <strong>condiciones recomendadas de
+crédito</strong>, no como resultado modelado.</li>
+<li>Mantengan separados el <strong>base case final</strong> (US$172.79m
+debt; US$19.01m IDC) y el <strong>70:30 stress / alternative
+case</strong> (c. US$295.78m debt; IDC c. US$32.5m). No mezclen cifras
+entre ambos.</li>
+<li>Si solo se expone una versión, oculten o borren del archivo final el
+bloque del otro idioma para no confundir al profesor. No cambien las 14
+slides de contenido.</li>
+</ol>
+<h3
+id="jerarquía-de-fuentes-cuando-encuentres-una-cifra-distinta">Jerarquía
+de fuentes cuando encuentres una cifra distinta</h3>
+<ol type="1">
+<li><strong>[CASE DATA] Case PDF:</strong> manda para hechos del caso y
+términos otorgados: CAPEX, años, tasa, sponsor ownership, market
+terms.</li>
+<li><strong>[MODEL OUTPUT] Final Excel model:</strong> manda para
+cálculos finales de la presentación: US$172.79m debt, US$19.01m IDC,
+US$409.01m uses, ratios e IRR.</li>
+<li><strong>[CREDIT RECOMMENDATION] Written answer PDF:</strong> sirve
+para razonamiento de riesgos y mitigantes, pero contiene referencias al
+escenario anterior de alto leverage. Por ejemplo, menciona equity de
+Italy-B de c. US$76m; <strong>no uses ese importe para el modelo
+final</strong>. Para la estructura DSCR-sized, Italy-B aporta
+US$141.73m.</li>
+</ol>
+<h3 id="revision-excel-respuesta">Revisión del Excel y respuesta
+escrita</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Documento</th>
+<th>Qué está bien y se usa</th>
+<th>Qué debe explicarse o corregirse al exponer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Excel final</strong></td>
+<td>Es la fuente final de deuda US$172.79m, IDC US$19.01m, Uses
+US$409.01m, equity US$236.22m, DSCR 1.24x, LLCR ~1.24x, PLCR ~1.81x e
+IRR 1.52%.</td>
+<td>CFADS es simplificado: EBITDA menos taxes; no incluye working
+capital, maintenance CAPEX ni reserve accounts. Por eso los resultados
+son base case académico, no un modelo bancario completo.</td>
+</tr>
+<tr>
+<td><strong>Respuesta escrita / Word-PDF</strong></td>
+<td>Identifica correctamente riesgos: tráfico, túneles, reasentamiento,
+sponsor strength, tasa, ausencia de reservas y conflicto de interés
+entre sponsors y Sub A/Sub B. También propone mitigantes sólidos.</td>
+<td>Mezcla el escenario 70:30 de alta deuda con el modelo final. Separar
+siempre los valores del final (172.79 / 19.01 / 236.22) de los del
+stress alternativo (~295.78 / ~32.5 / DSCR 0.74x).</td>
+</tr>
+<tr>
+<td><strong>Texto sobre tasa</strong></td>
+<td>La frase correcta es: “The case does not state whether the rate is
+fixed or floating. If floating, hedge it and re-run DSCR.”</td>
+<td>No decir “US$3m adicionales” sin contexto: esa estimación
+corresponde a la alternativa de alta deuda de ~US$296m. En el modelo
+final, 100 bp representa aproximadamente US<span
+class="math inline">1.73<em>m</em><em>a</em><em>l</em><em>i</em><em>n</em><em>i</em><em>c</em><em>i</em><em>o</em>, <em>a</em><em>n</em><em>t</em><em>e</em><em>s</em><em>d</em><em>e</em><em>a</em><em>m</em><em>o</em><em>r</em><em>t</em><em>i</em><em>z</em><em>a</em><em>r</em>.||* * <em>T</em><em>e</em><em>x</em><em>t</em><em>o</em><em>s</em><em>o</em><em>b</em><em>r</em><em>e</em><em>U</em><em>S</em><em>D</em> * *|<em>L</em><em>a</em><em>f</em><em>r</em><em>a</em><em>s</em><em>e</em><em>c</em><em>o</em><em>r</em><em>r</em><em>e</em><em>c</em><em>t</em><em>a</em><em>e</em><em>s</em>:“<em>T</em><em>a</em><em>p</em><em>i</em><em>o</em><em>c</em><em>a</em><em>p</em><em>o</em><em>l</em><em>i</em><em>s</em><em>u</em><em>s</em><em>e</em><em>s</em><em>U</em><em>S</em></span>
+as local currency, so toll revenue and debt service share the same
+currency.”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusión de la revisión:</strong> la lógica central y las
+fórmulas son consistentes. La vulnerabilidad no está en la suma de la
+tabla; está en que la cobertura base cumple exactamente el mínimo, con
+demanda expuesta y sin reservas. Esa es la razón de la aprobación
+condicionada.</p>
+<hr />
+<h2 id="adversarial">9. Revisión adversarial de cada cifra y supuesto
+material</h2>
+<p>Usa este formato mental cuando llegue una pregunta: <strong>fuente →
+cálculo → consecuencia → límite</strong>.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Cifra / supuesto</th>
+<th>Fuente o cálculo</th>
+<th>Si cambia, ¿qué pasa?</th>
+<th>Respuesta adversarial lista</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>23-year concession</strong></td>
+<td>Dato del caso: 3 años de construcción + 20 de operación.</td>
+<td>Cambiar el plazo afecta tail e IRR.</td>
+<td>“The 23 years are contractual case data. Debt amortises in 12
+operating years, leaving an 8-year tail.”</td>
+</tr>
+<tr>
+<td><strong>US$390m CAPEX</strong></td>
+<td>Costo estimado del caso.</td>
+<td>Un overrun eleva equity o requiere deuda adicional; con DSCR fijo la
+deuda no sube automáticamente.</td>
+<td>“US$390m is case data and excludes an explicit contingency; that is
+a credit weakness.”</td>
+</tr>
+<tr>
+<td><strong>3 construction years</strong></td>
+<td>Dato del caso y EPC timeline.</td>
+<td>Atraso posterga ingresos, aumenta interest and may exhaust
+equity.</td>
+<td>“We use the stated three-year schedule, but tunnels and resettlement
+make it a key downside risk.”</td>
+</tr>
+<tr>
+<td><strong>US$130m per year</strong></td>
+<td>390 / 3.</td>
+<td>Si spend curve es front-loaded, IDC y equity se adelantan.</td>
+<td>“It is a simplifying assumption from the case’s even CAPEX
+distribution.”</td>
+</tr>
+<tr>
+<td><strong>5.5% interest rate</strong></td>
+<td>Dato de market sounding.</td>
+<td>Una tasa mayor reduce debt capacity o baja DSCR.</td>
+<td>“The rate is a stated market input. If floating, we would hedge it
+and re-run DSCR.”</td>
+</tr>
+<tr>
+<td><strong>Three equal debt drawdowns</strong></td>
+<td>Dato del caso: al inicio de cada construction year.</td>
+<td>Cambiar el calendario cambia IDC y equity timing.</td>
+<td>“We draw US$57.60m at the start of each year because that is the
+lender convention given in the case.”</td>
+</tr>
+<tr>
+<td><strong>US$3.17m / 6.34m / 9.50m IDC</strong></td>
+<td>5.5% × post-draw outstanding debt: 57.60 / 115.19 / 172.79.</td>
+<td>Más deuda, mayor tasa o drawdown adelantado aumentan IDC.</td>
+<td>“IDC rises because the outstanding debt base rises every year.”</td>
+</tr>
+<tr>
+<td><strong>IDC paid by equity</strong></td>
+<td>Supuesto explícito del Q3 Assumptions sheet.</td>
+<td>Capitalizarlo aumentaría principal, intereses futuros y required
+equity/debt sizing change.</td>
+<td>“IDC is a real use of cash; equity is its source. It is not added to
+principal in this base case.”</td>
+</tr>
+<tr>
+<td><strong>US$409.01m total uses</strong></td>
+<td>390.00 CAPEX + 19.01 IDC.</td>
+<td>Es mayor si hay delays, contingency, DSRA, MMRA or capitalised
+IDC.</td>
+<td>“The table is a base-case funding plan; it deliberately excludes
+reserve accounts per the assignment.”</td>
+</tr>
+<tr>
+<td><strong>70:30 leverage ceiling</strong></td>
+<td>Market sounding from case.</td>
+<td>70% debt would breach DSCR; it cannot be fully used.</td>
+<td>“It is a maximum leverage parameter, not a guarantee of cash-flow
+capacity.”</td>
+</tr>
+<tr>
+<td><strong>US$172.79m senior debt</strong></td>
+<td>PV at 5.5% of sculpted debt service = CFADS / 1.24x across repayment
+period.</td>
+<td>Lower CFADS or higher minimum DSCR reduces it.</td>
+<td>“Debt is the output of the coverage test, not an arbitrary financing
+percentage.”</td>
+</tr>
+<tr>
+<td><strong>42.2% debt / total uses</strong></td>
+<td>172.79 / 409.01.</td>
+<td>Higher equity reduces lender risk but can hurt IRR.</td>
+<td>“The debt proportion falls below 70% because the project cash flow
+is the binding constraint.”</td>
+</tr>
+<tr>
+<td><strong>US$236.22m equity</strong></td>
+<td>409.01 − 172.79.</td>
+<td>It rises dollar-for-dollar with unfunded cost overruns if debt is
+fixed.</td>
+<td>“Equity is residual in the model, but it must be committed before
+drawdowns in real financing.”</td>
+</tr>
+<tr>
+<td><strong>Italy-A 40%, Italy-B 60%</strong></td>
+<td>Case ownership.</td>
+<td>Italy-B must fund US$141.73m and may not have capacity.</td>
+<td>“This is a central credit concern; we require Italy-A support, an
+equity LC or a new investor.”</td>
+</tr>
+<tr>
+<td><strong>US$72m Year 1 revenue</strong></td>
+<td>Case forecast.</td>
+<td>Lower traffic reduces CFADS and breaks a 1.24x-only structure.</td>
+<td>“It is sponsor forecast data; lenders must commission an independent
+traffic study.”</td>
+</tr>
+<tr>
+<td><strong>2.5% revenue growth</strong></td>
+<td>Case assumption.</td>
+<td>Lower indexation / traffic growth lowers CFADS.</td>
+<td>“We use the case base case; it is not a lender downside case.”</td>
+</tr>
+<tr>
+<td><strong>US$50m Year 1 OPEX</strong></td>
+<td>Case forecast.</td>
+<td>Higher OPEX directly lowers CFADS.</td>
+<td>“OPEX is high at roughly 69% of revenue in Year 1, which makes the
+first years sensitive.”</td>
+</tr>
+<tr>
+<td><strong>2.3% OPEX growth</strong></td>
+<td>Case assumption.</td>
+<td>If OPEX grows faster than revenue, margins compress.</td>
+<td>“The 20 bp growth spread supports gradual margins, but it is too
+small to absorb a material traffic shock.”</td>
+</tr>
+<tr>
+<td><strong>30% tax in operations / 0% construction</strong></td>
+<td>Case tax holiday and local tax rate.</td>
+<td>Higher tax reduces CFADS; construction tax would increase funding
+needs.</td>
+<td>“Construction is tax-exempt; the 30% rate begins at operations under
+the case.”</td>
+</tr>
+<tr>
+<td><strong>CFADS = EBITDA − taxes</strong></td>
+<td>Modelling assumption; no working capital, maintenance CAPEX or
+reserves.</td>
+<td>In reality, including omitted cash needs reduces CFADS and debt
+capacity.</td>
+<td>“This CFADS is simplified by assignment; a lender model would add
+maintenance and reserve funding.”</td>
+</tr>
+<tr>
+<td><strong>1.24x DSCR minimum</strong></td>
+<td>Bank requirement in case.</td>
+<td>Higher target DSCR means lower debt; lower target weakens
+protection.</td>
+<td>“We do not treat 1.24x as comfort; it is the contractual floor and
+the base case has no headroom.”</td>
+</tr>
+<tr>
+<td><strong>12-year repayment</strong></td>
+<td>Case debt tenor: 3 years construction interest-only + 12 years
+amortisation.</td>
+<td>Longer tenor can increase debt capacity, but must fit concession and
+lender appetite.</td>
+<td>“We use the stated tenor and sculpt principal to CFADS within
+it.”</td>
+</tr>
+<tr>
+<td><strong>Debt repaid in 2037</strong></td>
+<td>2026–2037: 12 operating repayment years.</td>
+<td>Shorter tenor increases debt service and reduces capacity.</td>
+<td>“Debt ends before concession expiry; this produces an 8-year
+tail.”</td>
+</tr>
+<tr>
+<td><strong>LLCR min 1.24x</strong></td>
+<td>PV of CFADS over loan life / debt outstanding.</td>
+<td>Changes with discount rate, CFADS and debt profile.</td>
+<td>“It is near DSCR because the debt service is deliberately sculpted
+to the same 1.24x target.”</td>
+</tr>
+<tr>
+<td><strong>PLCR min 1.81x</strong></td>
+<td>PV of CFADS for full project life / debt outstanding.</td>
+<td>Falls if concession cash flows or term fall.</td>
+<td>“PLCR is higher because it also counts the eight post-debt operating
+years.”</td>
+</tr>
+<tr>
+<td><strong>Sponsors’ IRR 1.52%</strong></td>
+<td>IRR of sponsor contributions and distributions.</td>
+<td>Better tariff, lower CAPEX or longer concession/debt tenor could
+lift it.</td>
+<td>“It is not attractive versus the project’s risks. Debt costs 5.5%,
+above the 2.60% unlevered project IRR, so leverage is
+value-destructive.”</td>
+</tr>
+<tr>
+<td><strong>No DSRA/MMRA/contingency</strong></td>
+<td>Assignment instruction / case omission.</td>
+<td>Liquidity cushion is absent; a shock can cause default sooner.</td>
+<td>“We exclude them from the requested base model, but our credit
+decision requires them as conditions.”</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="devils-advocate-interrogatorio-de-profesor-o-comité">10. Devil’s
+advocate: interrogatorio de profesor o comité</h2>
+<h3
+id="nivel-1-como-si-tuvieras-que-explicarlo-a-alguien-de-cinco-años">Nivel
+1 — como si tuvieras que explicarlo a alguien de cinco años</h3>
+<p><strong>Pregunta:</strong> “¿Qué son Sources and Uses?”<br />
+<strong>Respuesta:</strong> “Uses son las cosas para las que necesitamos
+dinero: construir la carretera y pagar intereses mientras todavía no hay
+peajes. Sources son las personas o bancos que ponen ese dinero. La tabla
+prueba que no falta ni sobra dinero.”</p>
+<p><strong>Pregunta:</strong> “¿Por qué no le piden todo al
+banco?”<br />
+<strong>Respuesta:</strong> “Porque la carretera todavía no gana
+suficiente dinero al inicio para devolver demasiado préstamo. Si se
+presta más, no alcanza para pagar la cuota.”</p>
+<p><strong>Pregunta:</strong> “¿Por qué el interés crece cada
+año?”<br />
+<strong>Respuesta:</strong> “Porque cada año se ha pedido otro tramo de
+préstamo; por eso hay más deuda sobre la cual pagar interés.”</p>
+<h3 id="nivel-2-profesor-técnico">Nivel 2 — profesor técnico</h3>
+<p><strong>Pregunta:</strong> “¿Por qué calculaste IDC sobre el balance
+después del drawdown y no sobre el promedio?”<br />
+<strong>Respuesta:</strong> “The case states that each tranche is
+disbursed at the start of the construction year and interest accrues
+from first disbursement. At annual granularity, the consistent
+simplifying convention is full-year interest on the post-draw balance. A
+monthly cash-flow model could refine it, but it would need the monthly
+CAPEX curve.”</p>
+<p><strong>Pregunta:</strong> “¿Por qué no incluiste interest on
+interest?”<br />
+<strong>Respuesta:</strong> “Because the Q3 assumption is that IDC is
+paid by equity and is not capitalised. Therefore it never becomes
+principal and does not itself earn interest.”</p>
+<p><strong>Pregunta:</strong> “¿Por qué equity está en Sources si es
+residual?”<br />
+<strong>Respuesta:</strong> “Residual is a modelling label, not an
+economic afterthought. It is the binding funding commitment that closes
+each year’s cash requirement; lenders would require it committed and
+available before drawing debt.”</p>
+<p><strong>Pregunta:</strong> “¿Por qué tu tabla no tiene contingency,
+DSRA ni working capital?”<br />
+<strong>Respuesta:</strong> “The assignment instructs no reserve
+accounts and the case provides no contingency or working-capital inputs.
+We keep the base case faithful to the case, then identify the omissions
+as credit conditions rather than silently inventing numbers.”</p>
+<p><strong>Pregunta:</strong> “¿No es inconsistente tener fixed-price
+EPC y a la vez pedir contingency?”<br />
+<strong>Respuesta:</strong> “No. Fixed price reduces contractor price
+risk, but does not eliminate delay, geotechnical, force majeure,
+change-in-law, resettlement and employer-risk exposures. Contingency
+covers residual risk and prevents a funding gap.”</p>
+<h3 id="nivel-3-comité-de-crédito">Nivel 3 — comité de crédito</h3>
+<p><strong>Pregunta:</strong> “Si DSCR cumple, ¿por qué no aprobar sin
+condiciones?”<br />
+<strong>Respuesta:</strong> “Because it only meets the floor in the
+sponsor base case, with no headroom, no DSRA, no MMRA, no contingency
+and pure traffic risk. A covenant pass is necessary but not sufficient
+for bankability.”</p>
+<p><strong>Pregunta:</strong> “¿Por qué no usar 70% de leverage y exigir
+más garantías?”<br />
+<strong>Respuesta:</strong> “Guarantees help recovery, but they do not
+make an unaffordable annual debt service affordable. The 70% alternative
+produces 0.74x minimum DSCR; the primary fix is lower debt or stronger
+predictable revenue, not only security.”</p>
+<p><strong>Pregunta:</strong> “¿Cómo sabes que US$172.79m es
+correcto?”<br />
+<strong>Respuesta:</strong> “We set each year’s debt service equal to
+CFADS divided by 1.24x and discount those 12 sculpted services at the
+5.5% debt rate. The present value is US$172.79m. The debt amortises to
+zero in 2037.”</p>
+<p><strong>Pregunta:</strong> “¿Por qué LLCR de 1.24x parece demasiado
+bajo?”<br />
+<strong>Respuesta:</strong> “It is mechanically close to DSCR because
+amortisation is sculpted exactly to the DSCR floor. This confirms the
+base case has no coverage cushion; it is not a reason to add debt.”</p>
+<p><strong>Pregunta:</strong> “¿Qué cifra podría romper primero el
+modelo?”<br />
+<strong>Respuesta:</strong> “Traffic/revenue, because there is no
+offtaker or minimum revenue guarantee. With Year 1 OPEX at about 69% of
+revenue, a revenue shock disproportionately reduces EBITDA and
+CFADS.”</p>
+<p><strong>Pregunta:</strong> “¿Qué exigirías antes de firmar?”<br />
+<strong>Respuesta:</strong> “Committed equity backed by Italy-A or an
+equity LC, independent traffic study and downside sizing, permits and
+RAP/ESIA, EPC bond and completion support, DSRA/MMRA, cash
+sweep/dividend lock-up, direct agreements and step-in rights.”</p>
+<hr />
+<h2 id="simulación-de-3-minutos-para-entrenar-solo">11. Simulación de 3
+minutos para entrenar solo</h2>
+<ol type="1">
+<li>Explica la slide Sources &amp; Uses sin leerla en 90 segundos.</li>
+<li>Repite solo los seis números: <strong>390, 19.01, 409.01, 172.79,
+236.22, 42.2%</strong>.</li>
+<li>Responde en una frase: “¿Por qué no 70:30?”</li>
+<li>Responde en una frase: “¿Por qué IDC sube?”</li>
+<li>Responde en una frase: “¿Qué falta para que sea financiable en la
+práctica?”</li>
+</ol>
+<p>Tu respuesta de cierre debe ser:</p>
+<blockquote>
+<p>“The table is fully funded in the base case, but the project is only
+conditionally bankable because debt capacity is constrained by CFADS and
+the model has no liquidity or cost-overrun cushion.”</p>
+</blockquote>
+</body>
+</html>
