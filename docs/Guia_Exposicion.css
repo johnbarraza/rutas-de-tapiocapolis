@@ -125,7 +125,7 @@ a.footnote-back { text-decoration: none; margin-left: 4px; }
 
 /* English equivalents shown next to Spanish terms */
 .en { color: var(--blue); font-style: italic; font-weight: 600; }
-.en::before { content: "EN"; display: inline-block; margin-right: 4px; padding: 1px 4px; border-radius: 4px; background: #1976A8; color: #FFF; font: normal 700 9px/1.3 Arial, sans-serif; letter-spacing: .05em; vertical-align: 2px; }
+.en::before { content: "EN: "; font-style: normal; font-weight: 800; font-size: .78em; letter-spacing: .04em; }
 h3 .en { font-size: .8em; }
 
 /* [?] markers linking terms and figures to their definitions */
