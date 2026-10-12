@@ -1321,14 +1321,104 @@ Sí, y lo reconocemos. Es la instrucción del caso; por eso las pedimos como con
 <div class="callout tip">
 <p><strong>Truco para recordarlo:</strong> el caso te da <strong>las reglas</strong> (costo, plazo, tasa, desembolsos, DSCR, ownership). El modelo calcula <strong>cuánta deuda se puede pagar</strong>. El <strong>equity tapa el hueco</strong> (<span class="en">equity is the plug</span>).</p>
 </div>
-<h3 data-number="4.5" id="orden-de-calculo"><span class="header-section-number">4.5</span> Por qué el orden de cálculo “va al revés”</h3>
+<h3 data-number="4.5" id="idc-equity"><span class="header-section-number">4.5</span> ¿Qué significa “IDC is funded by equity and is not capitalised”?</h3>
+<p><strong>En simple:</strong> durante la construcción la deuda genera intereses (IDC: 3.17 + 6.34 + 9.50 = <strong>19.01</strong>), pero la carretera todavía no cobra peajes. Esos intereses <strong>se pagan en efectivo cada año</strong> y el dinero lo ponen <strong>los sponsors (equity)</strong>. <strong>No se suman a la deuda</strong> (no se “capitalizan”).</p>
+<ul>
+<li><strong>Funded by equity</strong> (EN: <em>financiado con equity</em>) = quien pone la plata para pagar esos intereses son Italy-A e Italy-B.</li>
+<li><strong>Not capitalised</strong> (EN: <em>no capitalizado</em>) = el interés no se agrega al saldo del préstamo; así no se pagan “intereses sobre intereses”.</li>
+</ul>
+<p><strong>¿Por qué es así?</strong></p>
+<ol type="1">
+<li><strong>El caso lo dice:</strong> el plazo es <em>“3 years construction (<strong>only interest payments</strong>)”</em>. En construcción se <strong>pagan</strong> los intereses; no se acumulan.</li>
+<li><strong>Alguien tiene que poner esa caja:</strong> el SPV no tiene ingresos hasta 2026. Las únicas fuentes son deuda o equity.</li>
+<li><strong>La deuda ya está topada en 172.79 por el DSCR</strong>, así que el resto lo cubre el equity.</li>
+<li><strong>Es la misma convención del ejercicio resuelto en clase:</strong> IDC en los usos y equity como residual.</li>
+</ol>
+<p><strong>¿Qué implica?</strong></p>
+<table>
+<thead>
+<tr>
+<th>Implicancia</th>
+<th>En números</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>El IDC es un <strong>uso</strong> de la tabla</td>
+<td>Usos = 390.00 + 19.01 = <strong>409.01</strong> (no solo 390).</td>
+</tr>
+<tr>
+<td>El equity paga la obra que no cubre la deuda <strong>más</strong> los intereses</td>
+<td>Equity = 409.01 − 172.79 = <strong>236.22</strong>, de los cuales 19.01 son intereses.</td>
+</tr>
+<tr>
+<td>El equity <strong>sube cada año</strong></td>
+<td>75.57 → 78.74 → 81.91, porque el IDC sube con el saldo.</td>
+</tr>
+<tr>
+<td>La deuda al terminar la obra es <strong>solo lo desembolsado</strong></td>
+<td>Saldo a fines de 2025 = <strong>172.79</strong>, sin intereses acumulados.</td>
+</tr>
+<tr>
+<td>Los sponsors ponen más dinero <strong>antes</strong></td>
+<td>Su IRR es menor (1.52%), pero el banco está más protegido: los sponsors arriesgan desde el inicio.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>¿Y si se capitalizara?</strong> La deuda al final de la obra igual tendría que ser 172.79 (lo que permite el DSCR). Pero ese saldo incluiría intereses acumulados, así que los bancos darían <strong>menos efectivo</strong> para la obra:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">IDC pagado por equity (nuestro caso)</th>
+<th style="text-align: right;">IDC capitalizado (alternativa)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desembolso anual en efectivo</td>
+<td style="text-align: right;">57.60</td>
+<td style="text-align: right;">≈51.70</td>
+</tr>
+<tr>
+<td>Efectivo de deuda para la obra</td>
+<td style="text-align: right;">172.79</td>
+<td style="text-align: right;">≈155.10</td>
+</tr>
+<tr>
+<td>Intereses de construcción</td>
+<td style="text-align: right;">19.01 (pagados por equity)</td>
+<td style="text-align: right;">≈17.69 (acumulados en la deuda)</td>
+</tr>
+<tr>
+<td>Saldo de deuda a fines de 2025</td>
+<td style="text-align: right;">172.79</td>
+<td style="text-align: right;">172.79</td>
+</tr>
+<tr>
+<td>Equity de los sponsors</td>
+<td style="text-align: right;"><strong>236.22</strong></td>
+<td style="text-align: right;"><strong>≈234.90</strong></td>
+</tr>
+<tr>
+<td>Usos totales</td>
+<td style="text-align: right;">409.01</td>
+<td style="text-align: right;">≈407.69</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusión:</strong> el equity queda <strong>casi igual</strong> en ambos casos (diferencia ≈1.3). Lo que cambia es cuánta deuda se usa para la obra y cuánta para intereses. Usamos el pago en efectivo porque es lo que dice el caso (<em>“only interest payments”</em>).</p>
+<blockquote>
+<p><strong>EN:</strong> <em>“IDC is the interest on the loan during construction, US$19.01m. Since the project has no revenue yet, the sponsors pay it in cash with equity, and it is not added to the loan balance. The case says only interest payments during construction, so the debt at completion is exactly the US$172.79m drawn.”</em></p>
+</blockquote>
+<h3 data-number="4.6" id="orden-de-calculo"><span class="header-section-number">4.6</span> Por qué el orden de cálculo “va al revés”</h3>
 <p>La tabla de construcción <strong>depende de la operación futura</strong>. No se puede llenar de arriba hacia abajo:</p>
 <pre class="text"><code>1. Proyectar operación 2026–2045   → Revenue, OPEX, impuestos → CFADS           (Q4)
 2. Dimensionar la deuda            → cuota = CFADS ÷ 1.24 → VP al 5.5% = 172.79  (Q4)
 3. Volver a construcción           → 172.79 ÷ 3 desembolsos → IDC → Uses          (Q3)
 4. Cerrar la tabla                 → Equity = Uses − Deuda                        (Q3)</code></pre>
 <p>Por eso, si alguien pregunta <em>“¿por qué la deuda es 172.79?”</em>, la respuesta <strong>no está en la tabla de Sources &amp; Uses</strong>, sino en el flujo de operación.</p>
-<h3 data-number="4.6" id="deuda-paso-a-paso"><span class="header-section-number">4.6</span> Cómo se obtiene la deuda de US$172.79m</h3>
+<h3 data-number="4.7" id="deuda-paso-a-paso"><span class="header-section-number">4.7</span> Cómo se obtiene la deuda de US$172.79m</h3>
 <p><strong>Idea:</strong> el banco presta hoy lo que vale hoy la suma de las cuotas que el proyecto puede pagar mañana.</p>
 <ol type="1">
 <li>Para cada año de repago (2026–2037), la <strong>cuota máxima</strong> (<span class="en">maximum debt service</span>) es CFADS ÷ 1.24. En 2026: 22.00 ÷ 1.24 = 17.74.</li>
@@ -1468,7 +1558,7 @@ Sí, y lo reconocemos. Es la instrucción del caso; por eso las pedimos como con
 </tr>
 </tbody>
 </table>
-<h3 data-number="4.7" id="por-qué-no-7030-la-cuenta-exacta"><span class="header-section-number">4.7</span> Por qué no 70:30: la cuenta exacta</h3>
+<h3 data-number="4.8" id="por-qué-no-7030-la-cuenta-exacta"><span class="header-section-number">4.8</span> Por qué no 70:30: la cuenta exacta</h3>
 <p>Si se intentara usar 70% de deuda sobre los usos totales, hay que tener en cuenta que el IDC también crece con la deuda:</p>
 <pre class="text"><code>Deuda = 70% × (CAPEX + IDC) = 70% × (390 + 0.11 × Deuda)
 Deuda × (1 − 0.077) = 273   →   Deuda ≈ 295.8   ·   IDC ≈ 32.5   ·   Uses ≈ 422.5</code></pre>
@@ -1515,7 +1605,7 @@ Deuda × (1 − 0.077) = 273   →   Deuda ≈ 295.8   ·   IDC ≈ 32.5   ·   
 <blockquote>
 <p><strong>EN:</strong> <em>“More debt does not increase cash flow; it only increases the debt service. With the same US$22m of CFADS, a 70:30 structure would need about US$30m of debt service in 2026, so the DSCR would fall to about 0.72 times. That is why the DSCR, not the 70% ceiling, sets the debt.”</em></p>
 </blockquote>
-<h3 data-number="4.8" id="cifras-de-otros-escenarios-que-no-debes-mezclar"><span class="header-section-number">4.8</span> Cifras de otros escenarios que no debes mezclar</h3>
+<h3 data-number="4.9" id="cifras-de-otros-escenarios-que-no-debes-mezclar"><span class="header-section-number">4.9</span> Cifras de otros escenarios que no debes mezclar</h3>
 <table>
 <thead>
 <tr>
@@ -1576,7 +1666,7 @@ Deuda × (1 − 0.077) = 273   →   Deuda ≈ 295.8   ·   IDC ≈ 32.5   ·   
 <td>[MODELLING ASSUMPTION]</td>
 <td>Capitalizar el IDC (sumarlo al saldo de deuda)</td>
 <td>El caso dice que en construcción hay <em>“only interest payments”</em>: <strong>se pagan</strong> intereses, no se acumulan. Igual que en clase.</td>
-<td>Se capitalizaría interés sobre interés. Como la deuda al terminar la obra no puede pasar de 172.79 (límite DSCR), <strong>habría menos deuda para la obra y más equity</strong>.</td>
+<td>Se capitalizaría interés sobre interés. Como la deuda al terminar la obra no puede pasar de 172.79 (límite DSCR), los bancos darían <strong>menos efectivo para la obra</strong> (≈155.1 en vez de 172.79) y ≈17.7 de la deuda serían intereses acumulados. El equity sería <strong>casi igual</strong> (≈234.9 vs 236.22). Ver <a href="#idc-equity">qué significa</a>.</td>
 </tr>
 <tr>
 <td style="text-align: center;">S3</td>
@@ -2094,9 +2184,9 @@ Porque es un requerimiento real de caja. Quién lo pague define la <strong>fuent
 <p><strong>EN:</strong> <em>“It is a real cash requirement. Who pays it defines the source; it does not remove the use.”</em></p>
 </blockquote>
 <p><strong>¿Por qué no capitalizan el IDC?</strong> (<span class="en">Why don’t you capitalise IDC?</span>)<br />
-El caso indica <em>“only interest payments”</em> durante construcción, es decir, se pagan. Si se capitalizara, la deuda al terminar la obra seguiría limitada a 172.79 por el DSCR, así que habría menos deuda para la obra y más equity.</p>
+El caso indica <em>“only interest payments”</em> durante construcción, es decir, se pagan. Si se capitalizara, la deuda al terminar la obra seguiría limitada a 172.79 por el DSCR: parte de esa deuda serían intereses acumulados (≈17.7), así que los bancos darían menos efectivo para la obra (≈155.1). El equity quedaría casi igual (≈234.9). Ver <a href="#idc-equity">qué significa</a>.</p>
 <blockquote>
-<p><strong>EN:</strong> <em>“The case says only interest payments during construction, so interest is paid in cash. Capitalising it would use up debt capacity and require more equity.”</em></p>
+<p><strong>EN:</strong> <em>“The case says only interest payments during construction, so interest is paid in cash. Capitalising it would use up part of the debt capacity: the banks would lend less cash for construction, and equity would be roughly the same.”</em></p>
 </blockquote>
 <p><strong>¿Por qué calcularon el IDC sobre el saldo después del desembolso y no sobre el promedio?</strong> (<span class="en">Why full-year interest on the post-drawdown balance?</span>)<br />
 Porque el caso dice que el desembolso es <strong>al inicio</strong> del año y que el interés corre desde ese momento: corresponde un año completo. Es la misma fórmula del ejercicio de clase: (saldo inicial + desembolso) × tasa.</p>
@@ -2942,7 +3032,7 @@ Italy-B: debe poner US$141.73m, ≈<strong>2.7 veces sus activos totales</strong
 <tr>
 <td><strong>US$409.01m de usos</strong></td>
 <td>390.00 + 19.01</td>
-<td>Sube con atrasos, contingencia, DSRA, MMRA o IDC capitalizado.</td>
+<td>Sube con atrasos, contingencia, DSRA o MMRA.</td>
 <td>“It deliberately excludes reserve accounts per the assignment.”</td>
 </tr>
 <tr>
