@@ -909,17 +909,80 @@ Risk    →  cash-flow impact (CFADS)            →  contractual or financial m
 </tr>
 </tbody>
 </table>
-<h3 data-number="3.2" id="la-lógica-de-la-slide-en-una-línea"><span class="header-section-number">3.2</span> La lógica de la slide en una línea</h3>
+<h3 data-number="3.2" id="debt-assumptions-dato"><span class="header-section-number">3.2</span> “Debt Assumptions”: ¿son supuestos nuestros o datos del caso?</h3>
+<div class="callout key">
+<p><strong>Son datos del caso.</strong> En inglés financiero, <em>assumptions</em> significa “insumos del modelo” (EN: <em>model inputs</em>), los haya dado el caso o los hayamos elegido nosotros. El bloque se llama “Debt Assumptions”, pero <strong>ninguno de sus términos lo inventamos</strong>: vienen del <em>market sounding</em> que el caso describe. Son “supuestos” solo en el sentido de que son <strong>términos indicativos</strong>: los bancos todavía no se comprometieron.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Término de la deuda</th>
+<th>¿Dato o supuesto?</th>
+<th>Qué dice el caso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tasa de 5.5%</td>
+<td>[CASE DATA]</td>
+<td><em>“interest rate of 5.5%”</em></td>
+</tr>
+<tr>
+<td>El interés corre desde el primer desembolso</td>
+<td>[CASE DATA]</td>
+<td><em>“interest obligations start to be accrued since the first disbursement”</em></td>
+</tr>
+<tr>
+<td>3 desembolsos iguales al inicio de cada año</td>
+<td>[CASE DATA]</td>
+<td><em>“disbursed in three equal parts at the start of each construction year”</em></td>
+</tr>
+<tr>
+<td>3 años solo intereses + 12 de amortización</td>
+<td>[CASE DATA]</td>
+<td><em>“tenor would be 3 years construction (only interest payments) plus 12 years”</em></td>
+</tr>
+<tr>
+<td>Leverage máximo 70:30 y DSCR mínimo 1.24x</td>
+<td>[CASE DATA]</td>
+<td><em>“maximum leverage 70:30 … minimum DSCR 1.24”</em></td>
+</tr>
+<tr>
+<td>Tasa <strong>constante</strong> (no variable)</td>
+<td>[MODELLING ASSUMPTION]</td>
+<td>El caso no dice si es fija o variable.</td>
+</tr>
+<tr>
+<td>Interés de <strong>año completo</strong> sobre el saldo tras cada desembolso</td>
+<td>[MODELLING ASSUMPTION]</td>
+<td>Convención anual, coherente con <em>“at the start of each year”</em> y con el ejercicio de clase.</td>
+</tr>
+<tr>
+<td>Repago <strong>esculpido</strong>: cuota = CFADS ÷ 1.24</td>
+<td>[MODELLING ASSUMPTION]</td>
+<td>El caso pide <em>“tailor the debt repayment”</em>; la forma concreta es nuestra.</td>
+</tr>
+<tr>
+<td>Monto de la deuda: US$172.79m</td>
+<td>[MODEL OUTPUT]</td>
+<td>El caso no da el monto; sale del modelo.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>EN:</strong> <em>“The debt terms are case data from the banks’ market sounding: 5.5%, three equal drawdowns at the start of each construction year, three years interest-only and twelve years of amortisation. They are indicative, not yet committed. Our own choices are only the constant rate, the annual interest convention and the sculpted repayment; the US$172.79m is a model output.”</em></p>
+</blockquote>
+<h3 data-number="3.3" id="la-lógica-de-la-slide-en-una-línea"><span class="header-section-number">3.3</span> La lógica de la slide en una línea</h3>
 <pre class="text"><code>Datos del caso (costo, ingresos, costos, tasa, plazo, impuestos, 70:30, 1.24x)
    + definiciones nuestras (CFADS, sculpting, IDC pagado por equity)
    → la deuda la decide el DSCR: US$172.79m, no el 70%</code></pre>
-<h3 data-number="3.3" id="tres-aclaraciones-para-decir-en-voz-alta"><span class="header-section-number">3.3</span> Tres aclaraciones para decir en voz alta</h3>
+<h3 data-number="3.4" id="tres-aclaraciones-para-decir-en-voz-alta"><span class="header-section-number">3.4</span> Tres aclaraciones para decir en voz alta</h3>
 <ol type="1">
 <li>Los desembolsos son <strong>al inicio de cada año de construcción</strong>: <em>“three equal drawdowns <strong>at the start of each construction year</strong>”</em>. Por eso el IDC es de año completo.</li>
 <li>El bloque “Modelling Assumptions” incluye el impuesto y la depreciación, pero <strong>son datos del caso</strong>. Si lo cuestionan: <em>“Tax and depreciation are case data; our own modelling choices are the CFADS definition, the sculpting and cash-paid IDC.”</em></li>
 <li>El 70:30 es un <strong>techo</strong>: <em>“70:30 is a ceiling; our actual debt is 42.25% of total uses.”</em></li>
 </ol>
-<h3 data-number="3.4" id="supuestos-que-no-están-en-la-slide-pero-te-pueden-preguntar"><span class="header-section-number">3.4</span> Supuestos que no están en la slide, pero te pueden preguntar</h3>
+<h3 data-number="3.5" id="supuestos-que-no-están-en-la-slide-pero-te-pueden-preguntar"><span class="header-section-number">3.5</span> Supuestos que no están en la slide, pero te pueden preguntar</h3>
 <table>
 <thead>
 <tr>
@@ -946,7 +1009,7 @@ Risk    →  cash-flow impact (CFADS)            →  contractual or financial m
 </tr>
 </tbody>
 </table>
-<h3 data-number="3.5" id="guion-de-la-slide-9-6090-segundos"><span class="header-section-number">3.5</span> Guion de la slide 9 (60–90 segundos)</h3>
+<h3 data-number="3.6" id="guion-de-la-slide-9-6090-segundos"><span class="header-section-number">3.6</span> Guion de la slide 9 (60–90 segundos)</h3>
 <blockquote>
 <p>“This slide summarises the assumptions behind our model. We only use data stated in the case, plus a few modelling criteria that we declare explicitly.</p>
 <p>First, construction and operations. CAPEX is US$390m, spread evenly over three years. Toll revenue starts at US$72m and grows 2.5% a year, while operating costs start at US$50m and grow 2.3%. That leaves a thin margin: EBITDA is only US$22m in the first year.</p>
@@ -960,7 +1023,7 @@ Risk    →  cash-flow impact (CFADS)            →  contractual or financial m
 <blockquote>
 <p>“Esta lámina resume los supuestos del modelo: solo usamos datos del caso y unos pocos criterios propios que declaramos. El CAPEX es US$390m en tres años; los ingresos parten en US$72m y crecen 2.5%, y los costos parten en US$50m y crecen 2.3%, así que el margen es delgado. La deuda paga 5.5%, se desembolsa en tres partes iguales al inicio de cada año, tiene tres años de solo intereses y doce de amortización. El impuesto es 30% desde la operación, con depreciación lineal a 20 años, y no hay reservas por instrucción del caso. Los bancos permiten hasta 70% de deuda, pero exigen un DSCR mínimo de 1.24x: con ese límite, el proyecto solo soporta US$172.79m. El IDC lo paga el equity.”</p>
 </blockquote>
-<h3 data-number="3.6" id="preguntas-probables-sobre-key-assumptions"><span class="header-section-number">3.6</span> Preguntas probables sobre Key Assumptions</h3>
+<h3 data-number="3.7" id="preguntas-probables-sobre-key-assumptions"><span class="header-section-number">3.7</span> Preguntas probables sobre Key Assumptions</h3>
 <p><strong>¿Cuáles son datos del caso y cuáles son supuestos de ustedes?</strong> (<span class="en">Which are case data and which are your assumptions?</span>)<br />
 Del caso: CAPEX, ingresos, OPEX, tasa, desembolsos, plazo, impuesto, depreciación, 70:30 y 1.24x. Nuestros: la definición del CFADS, el sculpting, el IDC pagado por equity, y no incluir capital de trabajo ni contingencia.</p>
 <blockquote>
